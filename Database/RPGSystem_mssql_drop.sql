@@ -1,0 +1,39 @@
+DROP TABLE IF EXISTS [Personagem]
+
+GO
+DROP TABLE IF EXISTS [Atributo]
+
+GO
+DROP TABLE IF EXISTS [Atributo_Personagem]
+
+GO
+DROP TABLE IF EXISTS [Historia]
+
+GO
+DROP TABLE IF EXISTS [Caminho]
+
+GO
+DROP TABLE IF EXISTS [TipoCondicao]
+
+GO
+DROP TABLE IF EXISTS [Condicao]
+
+GO
+DROP TABLE IF EXISTS [Login]
+
+GO
+DROP TABLE IF EXISTS [Login_Personagem]
+
+GO
+DROP TABLE IF EXISTS [Item]
+
+GO
+DROP TABLE IF EXISTS [Atributo_Historia]
+
+GO
+DROP TABLE IF EXISTS [Item_Personagem]
+
+GO
+DROP TABLE IF EXISTS [Item_Historia]
+
+GO
