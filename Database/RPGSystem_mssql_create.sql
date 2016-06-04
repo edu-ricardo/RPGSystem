@@ -10,7 +10,7 @@ CREATE TABLE [Personagem] (
 )
 GO
 CREATE TABLE [Atributo] (
-	idAtributo bigint NOT NULL,
+	idAtributo int NOT NULL,
 	tipo char(1) NOT NULL,
 	nome varchar(50) NOT NULL,
 	descricao varchar(255),
