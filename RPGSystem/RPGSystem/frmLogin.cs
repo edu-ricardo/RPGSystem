@@ -13,5 +13,14 @@ namespace RPGSystem {
         public frmLogin() {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void llbCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            frmCadUser CadUser = new frmCadUser();
+            CadUser.ShowDialog();
+        }
     }
 }

@@ -26,8 +26,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbLogin = new System.Windows.Forms.TextBox();
+            this.tbSenha = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.llbCadastrar = new System.Windows.Forms.LinkLabel();
@@ -51,20 +51,20 @@
             this.lblSenha.TabIndex = 1;
             this.lblSenha.Text = "Senha";
             // 
-            // textBox1
+            // tbLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 23);
-            this.textBox1.TabIndex = 2;
+            this.tbLogin.Location = new System.Drawing.Point(144, 35);
+            this.tbLogin.Name = "tbLogin";
+            this.tbLogin.Size = new System.Drawing.Size(263, 23);
+            this.tbLogin.TabIndex = 2;
             // 
-            // textBox2
+            // tbSenha
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(263, 23);
-            this.textBox2.TabIndex = 3;
+            this.tbSenha.Location = new System.Drawing.Point(144, 76);
+            this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
+            this.tbSenha.Size = new System.Drawing.Size(263, 23);
+            this.tbSenha.TabIndex = 3;
             // 
             // btnLogin
             // 
@@ -77,12 +77,14 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(307, 130);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 26);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // llbCadastrar
             // 
@@ -93,17 +95,19 @@
             this.llbCadastrar.TabIndex = 6;
             this.llbCadastrar.TabStop = true;
             this.llbCadastrar.Text = "Cadastrar-se";
+            this.llbCadastrar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbCadastrar_LinkClicked);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.llbCadastrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSenha);
+            this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,8 +127,8 @@
 
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbLogin;
+        private System.Windows.Forms.TextBox tbSenha;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.LinkLabel llbCadastrar;
