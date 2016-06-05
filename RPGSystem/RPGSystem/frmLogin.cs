@@ -1,4 +1,5 @@
 ﻿using RPGSystem.Entidades;
+using RPGSystem.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,9 @@ namespace RPGSystem {
             user.Senha = tbSenha.Text;
             string MessageLogin;
             if (user.Logar(out MessageLogin)) {
-                MessageBox.Show("Login valido!");
+                ITela TelaUser = FactoryTelas.GetScreen(user);
+                (TelaUser as Form).Show();                
+                this.Close();
             }else {
                 MessageBox.Show(MessageLogin);
             }

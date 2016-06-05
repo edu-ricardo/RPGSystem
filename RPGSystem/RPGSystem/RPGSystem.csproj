@@ -65,8 +65,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessNotDefined.cs" />
     <Compile Include="DAO\DBAcces.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Formularios\FactoryTelas.cs" />
+    <Compile Include="Formularios\frmAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAdministrador.Designer.cs">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmJogador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmJogador.Designer.cs">
+      <DependentUpon>frmJogador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMestre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMestre.Designer.cs">
+      <DependentUpon>frmMestre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\ITela.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="frmCadUser.cs">
       <SubType>Form</SubType>
@@ -84,6 +105,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Formularios\frmJogador.resx">
+      <DependentUpon>frmJogador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +155,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

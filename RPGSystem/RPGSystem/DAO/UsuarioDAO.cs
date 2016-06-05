@@ -58,6 +58,8 @@ namespace RPGSystem.DAO {
             SqlDataReader res = db.Query(sql, ParamsName, Params);
 
             if (res.Read()) {
+                user.Nivel = Convert.ToChar(res["nivel"]);
+                user.Email = Convert.ToString(res["email"]);
                 return true;
             }
             else {
