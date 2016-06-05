@@ -76,5 +76,21 @@ namespace RPGSystem.Entidades {
             UsuarioDAO DAO = new UsuarioDAO();
             DAO.Cadastrar(this);
         }
+
+        public Boolean Logar(out string Message) {
+            Message = "";
+            UsuarioDAO DAO = new UsuarioDAO();
+            if (!DAO.UserExist(this)) {
+                Message = "Usuário inexistente!";
+                return false;
+            }
+            else if (!DAO.ValidPass(this)) {
+                Message = "Senha incorreta!";
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
     }
 }

@@ -60,7 +60,7 @@ namespace RPGSystem.DAO {
         /*
             Executa uma query com parametros
         */
-        public SqlDataReader Query(string Query, , List<string> ParamsName, List<object> Parameters) {
+        public SqlDataReader Query(string Query, List<string> ParamsName, List<object> Parameters) {
             SqlConnection Conexao = new SqlConnection();
             Conexao.ConnectionString = StrCon;
             Conexao.Open();
