@@ -1,3 +1,8 @@
+create database RPGSystem
+GO
+use RPGSystem
+go
+
 CREATE TABLE [Personagem] (
 	idPersonagem int NOT NULL,
 	nome varchar(100) NOT NULL,
@@ -78,7 +83,8 @@ CREATE TABLE [Login] (
 	idLogin int NOT NULL,
 	login varchar(100) NOT NULL,
 	senha varchar(255) NOT NULL,
-	nivel char(1) DEFAULT 'U',
+	nivel char(1) DEFAULT 'J',
+	email varchar(255),
   CONSTRAINT [PK_LOGIN] PRIMARY KEY CLUSTERED
   (
   [idLogin] ASC
@@ -148,7 +154,8 @@ GO
 ALTER TABLE [Caminho] CHECK CONSTRAINT [Caminho_fk0]
 GO
 ALTER TABLE [Caminho] WITH CHECK ADD CONSTRAINT [Caminho_fk1] FOREIGN KEY ([idHistoriaDestino]) REFERENCES [Historia]([idHistoria])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+on DELETE NO ACTION
 GO
 ALTER TABLE [Caminho] CHECK CONSTRAINT [Caminho_fk1]
 GO
