@@ -1,39 +1,39 @@
-DROP TABLE IF EXISTS [Personagem]
+DROP TABLE [Personagem]
 
 GO
-DROP TABLE IF EXISTS [Atributo]
+DROP TABLE [Atributo]
 
 GO
-DROP TABLE IF EXISTS [Atributo_Personagem]
+DROP TABLE [Atributo_Personagem]
 
 GO
-DROP TABLE IF EXISTS [Historia]
+DROP TABLE [Historia]
 
 GO
-DROP TABLE IF EXISTS [Caminho]
+DROP TABLE [Caminho]
 
 GO
-DROP TABLE IF EXISTS [TipoCondicao]
+DROP TABLE [TipoCondicao]
 
 GO
-DROP TABLE IF EXISTS [Condicao]
+DROP TABLE [Condicao]
 
 GO
-DROP TABLE IF EXISTS [Login]
+DROP TABLE [Login]
 
 GO
-DROP TABLE IF EXISTS [Login_Personagem]
+DROP TABLE [Login_Personagem]
 
 GO
-DROP TABLE IF EXISTS [Item]
+DROP TABLE [Item]
 
 GO
-DROP TABLE IF EXISTS [Atributo_Historia]
+DROP TABLE [Atributo_Historia]
 
 GO
-DROP TABLE IF EXISTS [Item_Personagem]
+DROP TABLE [Item_Personagem]
 
 GO
-DROP TABLE IF EXISTS [Item_Historia]
+DROP TABLE [Item_Historia]
 
 GO
