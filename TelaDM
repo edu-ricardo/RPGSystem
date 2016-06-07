@@ -1,0 +1,29 @@
+Campo com info de usuário (canto superior a direita) 
+
+Menu:
+
+História / Vilões / Armas(atq+def) / Atributos(qlqrmerda) / Condições
+
+Historia: Capitulo (cadastrar capitulos) //titulo, descrição, texto, opções// (funcional) btnincluir,  ????
+
+		   (Exluir) //selecionar capitulo -> // funcional: titulo, descrição, texto, opções (sem poder modificar, mais btnexcluir)
+		   (Alterar) //selecionar capitulo -> //funcional: titulo, descrição, texto, opções (com permissao de alteração de dados + btnAlterar)
+		   (Listar) // capitulo //
+
+
+Historia: História (ligar capitulos) // CONDIÇÕES, caminho -> destino ?????
+
+
+
+
+Vilões : Cadastrar ( incluir viloes e seus atributos )//nome, especie, ataque, defesa, fraqueza(x2 em ataques recebidos), idviloes, // (funcional) btnIncluir//
+
+Armas: Cadastrar //nome, ataque, defesa, durabilidade, idarmas, incluir//
+
+Atributos: Cadastrar //tipo, descrição, idatributos, caminho para receber/aumentar// (funciona) btnIncluir//
+
+Condições: Cadastrar //capitulo(lista), vilao(lista), armas(lista), atributos(lista), idcondições, incluir//
+
+
+
+
