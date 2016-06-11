@@ -67,7 +67,9 @@
   <ItemGroup>
     <Compile Include="AccessNotDefined.cs" />
     <Compile Include="DAO\DBAcces.cs" />
+    <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Entidades\IEntidades.cs" />
     <Compile Include="Formularios\FactoryTelas.cs" />
     <Compile Include="Formularios\frmAdministrador.cs">
       <SubType>Form</SubType>
@@ -107,6 +109,9 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Formularios\frmJogador.resx">
       <DependentUpon>frmJogador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMestre.resx">
+      <DependentUpon>frmMestre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>

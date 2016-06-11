@@ -65,6 +65,7 @@
             this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(263, 23);
             this.tbSenha.TabIndex = 3;
+            this.tbSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSenha_KeyPress);
             // 
             // btnLogin
             // 

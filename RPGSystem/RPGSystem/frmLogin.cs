@@ -32,10 +32,19 @@ namespace RPGSystem {
             string MessageLogin;
             if (user.Logar(out MessageLogin)) {
                 ITela TelaUser = FactoryTelas.GetScreen(user);
-                (TelaUser as Form).Show();                
+                this.Hide();
+                (TelaUser as Form).ShowDialog(this);
                 this.Close();
-            }else {
+            }
+            else {
                 MessageBox.Show(MessageLogin);
+            }
+        }
+
+        private void tbSenha_KeyPress(object sender, KeyPressEventArgs e) {
+            if (e.KeyChar == '\r') {
+                btnLogin.PerformClick();
+                e.Handled = true;
             }
         }
     }
