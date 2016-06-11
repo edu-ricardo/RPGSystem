@@ -66,9 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessNotDefined.cs" />
+    <Compile Include="DAO\AtributoDAO.cs" />
     <Compile Include="DAO\DBAcces.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Entidades\Atributos.cs" />
     <Compile Include="Entidades\IEntidades.cs" />
     <Compile Include="Formularios\FactoryTelas.cs" />
     <Compile Include="Formularios\frmAdministrador.cs">
@@ -91,6 +93,12 @@
     </Compile>
     <Compile Include="Entidades\ITela.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Formularios\ucIncluirAtributo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirAtributo.Designer.cs">
+      <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMestre.resx">
       <DependentUpon>frmMestre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
+      <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>
