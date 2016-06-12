@@ -124,6 +124,7 @@
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             this.listarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listarToolStripMenuItem.Text = "Listar";
+            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // frmMestre
             // 

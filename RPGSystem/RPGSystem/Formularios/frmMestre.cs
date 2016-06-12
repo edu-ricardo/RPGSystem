@@ -56,5 +56,19 @@ namespace RPGSystem.Formularios {
         private void tcMestre_DoubleClick(object sender, EventArgs e) {
             tcMestre.TabPages.Remove(tcMestre.SelectedTab);
         }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e) {
+            TabPage tpListAttributo = new TabPage("Listar Atributo");
+            ucListarAtributos TelaListAttr = new ucListarAtributos();
+            TelaListAttr.Parent = this;
+            TelaListAttr.Dock = DockStyle.Fill;
+            tpListAttributo.Controls.Add(TelaListAttr);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpListAttributo.AutoScroll = true;
+                tpListAttributo.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpListAttributo.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpListAttributo);
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace RPGSystem.Entidades {
         public void Salvar() {
             AtributoDAO dao = new AtributoDAO();
 
-            if (dao.ListarAtributos().Exists(x => x.Nome == this.Nome)) {
+            if (this.IdAtributo != int.MaxValue && dao.ListarAtributos().Exists(x => x.IdAtributo == this.IdAtributo)) {
                 dao.Alterar(this, this.IdAtributo);
             }
             else {

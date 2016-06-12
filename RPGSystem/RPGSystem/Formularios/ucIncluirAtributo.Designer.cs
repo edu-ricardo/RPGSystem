@@ -86,7 +86,7 @@
             // btnIncluir
             // 
             this.btnIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnIncluir.Location = new System.Drawing.Point(22, 411);
+            this.btnIncluir.Location = new System.Drawing.Point(22, 418);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(75, 23);
             this.btnIncluir.TabIndex = 6;
@@ -97,7 +97,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.Location = new System.Drawing.Point(115, 411);
+            this.btnCancelar.Location = new System.Drawing.Point(115, 418);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.lblTipo);
             this.Font = new System.Drawing.Font("Tahoma", 9.25F);
             this.Name = "ucIncluirAtributo";
-            this.Size = new System.Drawing.Size(619, 450);
+            this.Size = new System.Drawing.Size(551, 457);
             this.ResumeLayout(false);
             this.PerformLayout();
 

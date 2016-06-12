@@ -51,9 +51,16 @@
     <ApplicationIcon>3dlb-3d-Dice.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +106,12 @@
     <Compile Include="Formularios\ucIncluirAtributo.Designer.cs">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucListarAtributos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucListarAtributos.Designer.cs">
+      <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
+      <DependentUpon>ucListarAtributos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>
