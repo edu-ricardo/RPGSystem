@@ -1,220 +1,397 @@
-create database RPGSystem
+USE [master]
 GO
-use RPGSystem
-go
+/****** Object:  Database [RPGSystem]    Script Date: 6/13/2016 7:52:08 PM ******/
+CREATE DATABASE [RPGSystem]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'RPGSystem', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\RPGSystem.mdf' , SIZE = 4096KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'RPGSystem_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\RPGSystem_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [RPGSystem] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [RPGSystem].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [RPGSystem] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [RPGSystem] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [RPGSystem] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [RPGSystem] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [RPGSystem] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [RPGSystem] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [RPGSystem] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [RPGSystem] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [RPGSystem] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [RPGSystem] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [RPGSystem] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [RPGSystem] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [RPGSystem] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [RPGSystem] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [RPGSystem] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [RPGSystem] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [RPGSystem] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [RPGSystem] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [RPGSystem] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [RPGSystem] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [RPGSystem] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [RPGSystem] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [RPGSystem] SET RECOVERY FULL 
+GO
+ALTER DATABASE [RPGSystem] SET  MULTI_USER 
+GO
+ALTER DATABASE [RPGSystem] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [RPGSystem] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [RPGSystem] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [RPGSystem] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [RPGSystem] SET DELAYED_DURABILITY = DISABLED 
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'RPGSystem', N'ON'
+GO
+USE [RPGSystem]
+GO
+/****** Object:  Table [dbo].[Atributo]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Atributo](
+	[idAtributo] [int] IDENTITY(1,1) NOT NULL,
+	[tipo] [char](1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[descricao] [varchar](255) NULL,
+ CONSTRAINT [PK_ATRIBUTO] PRIMARY KEY CLUSTERED 
+(
+	[idAtributo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-CREATE TABLE [Personagem] (
-	idPersonagem int NOT NULL,
-	nome varchar(100) NOT NULL,
-	idHistoria int NOT NULL,
-  CONSTRAINT [PK_PERSONAGEM] PRIMARY KEY CLUSTERED
-  (
-  [idPersonagem] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Atributo_Historia]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Atributo_Historia](
+	[idAtributo] [int] NOT NULL,
+	[idHistoria] [int] NOT NULL
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Atributo] (
-	idAtributo int NOT NULL,
-	tipo char(1) NOT NULL,
-	nome varchar(50) NOT NULL,
-	descricao varchar(255),
-  CONSTRAINT [PK_ATRIBUTO] PRIMARY KEY CLUSTERED
-  (
-  [idAtributo] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+/****** Object:  Table [dbo].[Atributo_Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Atributo_Personagem](
+	[idPersonagem] [int] NOT NULL,
+	[idAtributo] [int] NOT NULL,
+	[valorInt] [int] NULL,
+	[valorStr] [varchar](255) NULL
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Atributo_Personagem] (
-	idPersonagem int NOT NULL,
-	idAtributo int NOT NULL,
-	valorInt int,
-	valorStr varchar(255)
-)
+SET ANSI_PADDING OFF
 GO
-CREATE TABLE [Historia] (
-	idHistoria int NOT NULL,
-	historia text NOT NULL,
-	titulo varchar(255),
-	capitulo varchar(255),
-	startChapter bit NOT NULL DEFAULT '0',
-  CONSTRAINT [PK_HISTORIA] PRIMARY KEY CLUSTERED
-  (
-  [idHistoria] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+/****** Object:  Table [dbo].[Caminho]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Caminho](
+	[idCaminho] [int] NOT NULL,
+	[idHistoriaOrigem] [int] NOT NULL,
+	[idHistoriaDestino] [int] NOT NULL,
+	[idCondicao] [int] NOT NULL,
+ CONSTRAINT [PK_CAMINHO] PRIMARY KEY CLUSTERED 
+(
+	[idCaminho] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Caminho] (
-	idCaminho int NOT NULL,
-	idHistoriaOrigem int NOT NULL,
-	idHistoriaDestino int NOT NULL,
-	idCondicao int NOT NULL,
-  CONSTRAINT [PK_CAMINHO] PRIMARY KEY CLUSTERED
-  (
-  [idCaminho] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+/****** Object:  Table [dbo].[Condicao]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Condicao](
+	[idCondicao] [int] NOT NULL,
+	[idTipoCondicao] [int] NOT NULL,
+ CONSTRAINT [PK_CONDICAO] PRIMARY KEY CLUSTERED 
+(
+	[idCondicao] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [TipoCondicao] (
-	idTipoCondicao int NOT NULL,
-	nome varchar(100) NOT NULL,
-	descricao text,
-  CONSTRAINT [PK_TIPOCONDICAO] PRIMARY KEY CLUSTERED
-  (
-  [idTipoCondicao] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+/****** Object:  Table [dbo].[Historia]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Historia](
+	[idHistoria] [int] NOT NULL,
+	[historia] [text] NOT NULL,
+	[titulo] [varchar](255) NULL,
+	[capitulo] [varchar](255) NULL,
+	[startChapter] [bit] NOT NULL,
+ CONSTRAINT [PK_HISTORIA] PRIMARY KEY CLUSTERED 
+(
+	[idHistoria] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Condicao] (
-	idCondicao int NOT NULL,
-	idTipoCondicao int NOT NULL,
-  CONSTRAINT [PK_CONDICAO] PRIMARY KEY CLUSTERED
-  (
-  [idCondicao] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Item]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Item](
+	[idItem] [int] NOT NULL,
+	[nome] [varchar](1) NOT NULL,
+	[statAtaque] [int] NULL,
+ CONSTRAINT [PK_ITEM] PRIMARY KEY CLUSTERED 
+(
+	[idItem] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Login] (
-	idLogin int NOT NULL,
-	login varchar(100) NOT NULL,
-	senha varchar(255) NOT NULL,
-	nivel char(1) DEFAULT 'J',
-	email varchar(255),
-  CONSTRAINT [PK_LOGIN] PRIMARY KEY CLUSTERED
-  (
-  [idLogin] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Item_Historia]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Item_Historia](
+	[idHistoria] [int] NOT NULL,
+	[idItem] [int] NOT NULL
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Login_Personagem] (
-	idLoginPersonagem int NOT NULL,
-	idLogin int NOT NULL,
-	idPersonagem int NOT NULL,
-  CONSTRAINT [PK_LOGIN_PERSONAGEM] PRIMARY KEY CLUSTERED
-  (
-  [idLoginPersonagem] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+/****** Object:  Table [dbo].[Item_Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Item_Personagem](
+	[idItem] [int] NOT NULL,
+	[idPersonagem] [int] NOT NULL
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Item] (
-	idItem int NOT NULL,
-	nome varchar NOT NULL,
-	statAtaque int,
-  CONSTRAINT [PK_ITEM] PRIMARY KEY CLUSTERED
-  (
-  [idItem] ASC
-  ) WITH (IGNORE_DUP_KEY = OFF)
+/****** Object:  Table [dbo].[Login]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Login](
+	[idLogin] [int] IDENTITY(1,1) NOT NULL,
+	[login] [varchar](100) NOT NULL,
+	[senha] [varchar](255) NOT NULL,
+	[nivel] [char](1) NULL CONSTRAINT [DF__Login__nivel__4D94879B]  DEFAULT ('U'),
+	[email] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_LOGIN] PRIMARY KEY CLUSTERED 
+(
+	[idLogin] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-)
 GO
-CREATE TABLE [Atributo_Historia] (
-	idAtributo int NOT NULL,
-	idHistoria int NOT NULL
-)
+SET ANSI_PADDING OFF
 GO
-CREATE TABLE [Item_Personagem] (
-	idItem int NOT NULL,
-	idPersonagem int NOT NULL
-)
+/****** Object:  Table [dbo].[Login_Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
 GO
-CREATE TABLE [Item_Historia] (
-	idHistoria int NOT NULL,
-	idItem int NOT NULL
-)
+SET QUOTED_IDENTIFIER ON
 GO
-ALTER TABLE [Personagem] WITH CHECK ADD CONSTRAINT [Personagem_fk0] FOREIGN KEY ([idHistoria]) REFERENCES [Historia]([idHistoria])
+CREATE TABLE [dbo].[Login_Personagem](
+	[idLoginPersonagem] [int] NOT NULL,
+	[idLogin] [int] NOT NULL,
+	[idPersonagem] [int] NOT NULL,
+ CONSTRAINT [PK_LOGIN_PERSONAGEM] PRIMARY KEY CLUSTERED 
+(
+	[idLoginPersonagem] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Personagem](
+	[idPersonagem] [int] NOT NULL,
+	[nome] [varchar](100) NOT NULL,
+	[idHistoria] [int] NOT NULL,
+ CONSTRAINT [PK_PERSONAGEM] PRIMARY KEY CLUSTERED 
+(
+	[idPersonagem] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TipoCondicao]    Script Date: 6/13/2016 7:52:08 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TipoCondicao](
+	[idTipoCondicao] [int] NOT NULL,
+	[nome] [varchar](100) NOT NULL,
+	[descricao] [text] NULL,
+ CONSTRAINT [PK_TIPOCONDICAO] PRIMARY KEY CLUSTERED 
+(
+	[idTipoCondicao] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+ALTER TABLE [dbo].[Historia] ADD  DEFAULT ('0') FOR [startChapter]
+GO
+ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk0] FOREIGN KEY([idAtributo])
+REFERENCES [dbo].[Atributo] ([idAtributo])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Personagem] CHECK CONSTRAINT [Personagem_fk0]
+ALTER TABLE [dbo].[Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk0]
 GO
-
-
-ALTER TABLE [Atributo_Personagem] WITH CHECK ADD CONSTRAINT [Atributo_Personagem_fk0] FOREIGN KEY ([idPersonagem]) REFERENCES [Personagem]([idPersonagem])
+ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk1] FOREIGN KEY([idHistoria])
+REFERENCES [dbo].[Historia] ([idHistoria])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk0]
+ALTER TABLE [dbo].[Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk1]
 GO
-ALTER TABLE [Atributo_Personagem] WITH CHECK ADD CONSTRAINT [Atributo_Personagem_fk1] FOREIGN KEY ([idAtributo]) REFERENCES [Atributo]([idAtributo])
+ALTER TABLE [dbo].[Atributo_Personagem]  WITH CHECK ADD  CONSTRAINT [Atributo_Personagem_fk0] FOREIGN KEY([idPersonagem])
+REFERENCES [dbo].[Personagem] ([idPersonagem])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk1]
+ALTER TABLE [dbo].[Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk0]
 GO
-
-
-ALTER TABLE [Caminho] WITH CHECK ADD CONSTRAINT [Caminho_fk0] FOREIGN KEY ([idHistoriaOrigem]) REFERENCES [Historia]([idHistoria])
+ALTER TABLE [dbo].[Atributo_Personagem]  WITH CHECK ADD  CONSTRAINT [Atributo_Personagem_fk1] FOREIGN KEY([idAtributo])
+REFERENCES [dbo].[Atributo] ([idAtributo])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Caminho] CHECK CONSTRAINT [Caminho_fk0]
+ALTER TABLE [dbo].[Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk1]
 GO
-ALTER TABLE [Caminho] WITH CHECK ADD CONSTRAINT [Caminho_fk1] FOREIGN KEY ([idHistoriaDestino]) REFERENCES [Historia]([idHistoria])
-ON UPDATE NO ACTION
-on DELETE NO ACTION
-GO
-ALTER TABLE [Caminho] CHECK CONSTRAINT [Caminho_fk1]
-GO
-ALTER TABLE [Caminho] WITH CHECK ADD CONSTRAINT [Caminho_fk2] FOREIGN KEY ([idCondicao]) REFERENCES [Condicao]([idCondicao])
+ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk0] FOREIGN KEY([idHistoriaOrigem])
+REFERENCES [dbo].[Historia] ([idHistoria])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Caminho] CHECK CONSTRAINT [Caminho_fk2]
+ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk0]
 GO
-
-
-ALTER TABLE [Condicao] WITH CHECK ADD CONSTRAINT [Condicao_fk0] FOREIGN KEY ([idTipoCondicao]) REFERENCES [TipoCondicao]([idTipoCondicao])
+ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk1] FOREIGN KEY([idHistoriaDestino])
+REFERENCES [dbo].[Historia] ([idHistoria])
+GO
+ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk1]
+GO
+ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk2] FOREIGN KEY([idCondicao])
+REFERENCES [dbo].[Condicao] ([idCondicao])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Condicao] CHECK CONSTRAINT [Condicao_fk0]
+ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk2]
 GO
-
-
-ALTER TABLE [Login_Personagem] WITH CHECK ADD CONSTRAINT [Login_Personagem_fk0] FOREIGN KEY ([idLogin]) REFERENCES [Login]([idLogin])
+ALTER TABLE [dbo].[Condicao]  WITH CHECK ADD  CONSTRAINT [Condicao_fk0] FOREIGN KEY([idTipoCondicao])
+REFERENCES [dbo].[TipoCondicao] ([idTipoCondicao])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk0]
+ALTER TABLE [dbo].[Condicao] CHECK CONSTRAINT [Condicao_fk0]
 GO
-ALTER TABLE [Login_Personagem] WITH CHECK ADD CONSTRAINT [Login_Personagem_fk1] FOREIGN KEY ([idPersonagem]) REFERENCES [Personagem]([idPersonagem])
+ALTER TABLE [dbo].[Item_Historia]  WITH CHECK ADD  CONSTRAINT [Item_Historia_fk0] FOREIGN KEY([idHistoria])
+REFERENCES [dbo].[Historia] ([idHistoria])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk1]
+ALTER TABLE [dbo].[Item_Historia] CHECK CONSTRAINT [Item_Historia_fk0]
 GO
-
-
-ALTER TABLE [Atributo_Historia] WITH CHECK ADD CONSTRAINT [Atributo_Historia_fk0] FOREIGN KEY ([idAtributo]) REFERENCES [Atributo]([idAtributo])
+ALTER TABLE [dbo].[Item_Historia]  WITH CHECK ADD  CONSTRAINT [Item_Historia_fk1] FOREIGN KEY([idItem])
+REFERENCES [dbo].[Item] ([idItem])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk0]
+ALTER TABLE [dbo].[Item_Historia] CHECK CONSTRAINT [Item_Historia_fk1]
 GO
-ALTER TABLE [Atributo_Historia] WITH CHECK ADD CONSTRAINT [Atributo_Historia_fk1] FOREIGN KEY ([idHistoria]) REFERENCES [Historia]([idHistoria])
+ALTER TABLE [dbo].[Item_Personagem]  WITH CHECK ADD  CONSTRAINT [Item_Personagem_fk0] FOREIGN KEY([idItem])
+REFERENCES [dbo].[Item] ([idItem])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk1]
+ALTER TABLE [dbo].[Item_Personagem] CHECK CONSTRAINT [Item_Personagem_fk0]
 GO
-
-ALTER TABLE [Item_Personagem] WITH CHECK ADD CONSTRAINT [Item_Personagem_fk0] FOREIGN KEY ([idItem]) REFERENCES [Item]([idItem])
+ALTER TABLE [dbo].[Item_Personagem]  WITH CHECK ADD  CONSTRAINT [Item_Personagem_fk1] FOREIGN KEY([idPersonagem])
+REFERENCES [dbo].[Personagem] ([idPersonagem])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Item_Personagem] CHECK CONSTRAINT [Item_Personagem_fk0]
+ALTER TABLE [dbo].[Item_Personagem] CHECK CONSTRAINT [Item_Personagem_fk1]
 GO
-ALTER TABLE [Item_Personagem] WITH CHECK ADD CONSTRAINT [Item_Personagem_fk1] FOREIGN KEY ([idPersonagem]) REFERENCES [Personagem]([idPersonagem])
+ALTER TABLE [dbo].[Login_Personagem]  WITH CHECK ADD  CONSTRAINT [Login_Personagem_fk0] FOREIGN KEY([idLogin])
+REFERENCES [dbo].[Login] ([idLogin])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Item_Personagem] CHECK CONSTRAINT [Item_Personagem_fk1]
+ALTER TABLE [dbo].[Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk0]
 GO
-
-ALTER TABLE [Item_Historia] WITH CHECK ADD CONSTRAINT [Item_Historia_fk0] FOREIGN KEY ([idHistoria]) REFERENCES [Historia]([idHistoria])
+ALTER TABLE [dbo].[Login_Personagem]  WITH CHECK ADD  CONSTRAINT [Login_Personagem_fk1] FOREIGN KEY([idPersonagem])
+REFERENCES [dbo].[Personagem] ([idPersonagem])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Item_Historia] CHECK CONSTRAINT [Item_Historia_fk0]
+ALTER TABLE [dbo].[Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk1]
 GO
-ALTER TABLE [Item_Historia] WITH CHECK ADD CONSTRAINT [Item_Historia_fk1] FOREIGN KEY ([idItem]) REFERENCES [Item]([idItem])
+ALTER TABLE [dbo].[Personagem]  WITH CHECK ADD  CONSTRAINT [Personagem_fk0] FOREIGN KEY([idHistoria])
+REFERENCES [dbo].[Historia] ([idHistoria])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [Item_Historia] CHECK CONSTRAINT [Item_Historia_fk1]
+ALTER TABLE [dbo].[Personagem] CHECK CONSTRAINT [Personagem_fk0]
 GO
-
+USE [master]
+GO
+ALTER DATABASE [RPGSystem] SET  READ_WRITE 
+GO
