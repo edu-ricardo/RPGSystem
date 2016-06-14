@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RPGSystem.Formularios
 {
-    public partial class ucItem : UserControl
+    public partial class ucInculirItem : UserControl
     {
-        public ucItem()
+        public ucInculirItem()
         {
             InitializeComponent();
         }

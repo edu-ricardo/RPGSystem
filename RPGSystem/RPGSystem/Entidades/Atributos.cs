@@ -40,8 +40,8 @@ namespace RPGSystem.Entidades {
         public void Salvar() {
             AtributoDAO dao = new AtributoDAO();
 
-            if (this.IdAtributo != int.MaxValue && dao.ListarAtributos().Exists(x => x.IdAtributo == this.IdAtributo)) {
-                dao.Alterar(this, this.IdAtributo);
+            if (this.IdAtributo != int.MaxValue && dao.ListarAtributos().Exists(x => x.IdAtributo == this.IdAtributo)) { // Exit.(se esse ID é diferente do proximo da lista; x
+                dao.Alterar(this, this.IdAtributo); // na tela, colocar confirmação
             }
             else {
                 dao.Criar(this);
