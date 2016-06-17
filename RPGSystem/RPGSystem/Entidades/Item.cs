@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RPGSystem.DAO;
 
 namespace RPGSystem.Entidades
 {
@@ -22,13 +23,24 @@ namespace RPGSystem.Entidades
             this.IdItem = int.MaxValue;
         }
 
-        public Item(int IdItem, String Tipo, String Nome, int Range, int Atack) {
-            this.IdItem = IdItem;
+        public Item(String Tipo, String Nome, int Range, int Atack) {
+            this.IdItem = int.MaxValue;
             this.Nome = Nome;
             this.Range = Range;
             this.Atack = Atack;
         }
 
+        public void Excluir() {
+            ItemDAO dao = new ItemDAO();
+
+            if(IdItem != int.MaxValue) {
+                dao.Excluir(this.IdItem);
+            }else if()
+        }
+
+        public void Salvar() {
+
+        }
 
 
     }
