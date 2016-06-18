@@ -111,15 +111,32 @@
     <Compile Include="Formularios\ucIncluirAtributo.Designer.cs">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ucInculirItem.cs" />
-    <Compile Include="Formularios\ucInculirItem.Designer.cs">
-      <DependentUpon>ucInculirItem.cs</DependentUpon>
+    <Compile Include="Formularios\ucIncluirItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirItem.Designer.cs">
+      <DependentUpon>ucIncluirItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirViloes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirViloes.Designer.cs">
+      <DependentUpon>ucIncluirViloes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ucListarAtributos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Formularios\ucListarAtributos.Designer.cs">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ucListarItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucListarViloes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucListarViloes.Designer.cs">
+      <DependentUpon>ucListarViloes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadUser.cs">
       <SubType>Form</SubType>
@@ -146,14 +163,20 @@
     <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucIncluirItem.resx">
+      <DependentUpon>ucIncluirItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirViloes.resx">
       <DependentUpon>ucIncluirViloes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ucInculirItem.resx">
-      <DependentUpon>ucInculirItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucListarItem.resx">
+      <DependentUpon>ucListarItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucListarViloes.resx">
+      <DependentUpon>ucListarViloes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>
