@@ -132,6 +132,9 @@
     <Compile Include="Formularios\ucListarItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Formularios\ucListarItem.Designer.cs">
+      <DependentUpon>ucListarItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ucListarViloes.cs">
       <SubType>UserControl</SubType>
     </Compile>
