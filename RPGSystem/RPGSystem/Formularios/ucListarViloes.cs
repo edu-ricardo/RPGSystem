@@ -80,7 +80,7 @@ namespace RPGSystem.Formularios
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            reloadGrid();
+
         }
 
         public class Especie
@@ -96,6 +96,41 @@ namespace RPGSystem.Formularios
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            dgvLista_DoubleClick(dgvLista, null);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_Click_1(object sender, EventArgs e)
+        {
+            reloadGrid();
+        }
+
+        private void btnExcluir_Click_1(object sender, EventArgs e)
+        {
+            if (dgvLista.SelectedRows.Count > 0)
+            {
+                Viloes.ListarTodos().ElementAt(dgvLista.SelectedRows[0].Index).Excluir();
+                reloadGrid();
+            }
+
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             Viloes evil = new Viloes();
             evil.IdVilao = idAlteracao;
@@ -124,24 +159,10 @@ namespace RPGSystem.Formularios
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             ReloadForm();
             scListarViloes.Panel2Collapsed = true;
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            dgvLista_DoubleClick(dgvLista, null);
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            if (dgvLista.SelectedRows.Count > 0)
-            {
-                Viloes.ListarTodos().ElementAt(dgvLista.SelectedRows[0].Index).Excluir();
-                reloadGrid();
-            }
         }
     }
 }
