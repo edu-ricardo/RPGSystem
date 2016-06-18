@@ -35,7 +35,7 @@ namespace RPGSystem.Entidades {
                 dao.Excluir(this.IdItem);
             }
             else if (dao.ListarItem().Exists(x => x.Nome == this.Nome)) {
-                dao.Excluir(dao.ListarAtributos().Find(x => x.Nome == this.Nome).IdAtributo);
+                dao.Excluir(dao.ListarItem().Find(x => x.Nome == this.Nome).IdItem);
             }
             else {
                 throw new ArgumentNullException("Item ainda não foi incluido e não pode ser excluido!");
