@@ -26,6 +26,10 @@ namespace RPGSystem.Formularios {
             List<Tipo> DataCbx = new List<Tipo>();
 
         }
+
+        private void btnReload_Click(object sender, EventArgs e) {
+
+        }
     }
 }
 

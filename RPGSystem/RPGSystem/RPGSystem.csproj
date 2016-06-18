@@ -74,12 +74,14 @@
   <ItemGroup>
     <Compile Include="AccessNotDefined.cs" />
     <Compile Include="DAO\AtributoDAO.cs" />
+    <Compile Include="DAO\CapituloDAO.cs" />
     <Compile Include="DAO\DBAcces.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\ItemDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\ViloesDAO.cs" />
     <Compile Include="Entidades\Atributos.cs" />
+    <Compile Include="Entidades\Capitulo.cs" />
     <Compile Include="Entidades\Especie.cs" />
     <Compile Include="Entidades\IEntidades.cs" />
     <Compile Include="Entidades\Item.cs" />
