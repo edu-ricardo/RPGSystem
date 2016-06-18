@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RPGSystem.Entidades;
 
-namespace RPGSystem.Formularios {
-    public partial class ucIncluirAtributo : UserControl {
-        public ucIncluirAtributo() {
+namespace RPGSystem.Formularios
+{
+    public partial class ucIncluirAtributo : UserControl
+    {
+        public ucIncluirAtributo()
+        {
             InitializeComponent();
 
             List<Tipo> DataCbx = new List<Tipo>();
@@ -24,45 +27,55 @@ namespace RPGSystem.Formularios {
             cbxTipo.SelectedIndex = 0;
         }
 
-        public class Tipo {
+        public class Tipo
+        {
             public char Id { get; set; }
             public string Desc { get; set; }
 
-            public Tipo(char Aid, string Adesc) {
+            public Tipo(char Aid, string Adesc)
+            {
                 this.Id = Aid;
                 this.Desc = Adesc;
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            if (Parent is TabPage) {
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (Parent is TabPage)
+            {
                 ((Parent as TabPage).Parent as TabControl).TabPages.Remove(((Parent as TabPage).Parent as TabControl).SelectedTab);
             }
         }
 
-        private void ReloadForm() {
+        private void ReloadForm()
+        {
             cbxTipo.SelectedIndex = 0;
             tbDescricao.Clear();
             tbNome.Clear();
         }
 
-        private void btnIncluir_Click(object sender, EventArgs e) {
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
             Atributos attr = new Atributos();
 
             attr.Tipo = Convert.ToChar(cbxTipo.SelectedValue);
             attr.Nome = tbNome.Text;
             attr.Descricao = tbDescricao.Text;
-            try {
+            try
+            {
                 attr.Salvar();
-                if (MessageBox.Show("Incluido com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                if (MessageBox.Show("Incluido com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
                     ReloadForm();
                 }
-                else {
+                else
+                {
                     btnCancelar.PerformClick();
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show("Ocorreu um erro na inclusão: "+ex.Message);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na inclusão: " + ex.Message);
                 //throw;
             }
         }

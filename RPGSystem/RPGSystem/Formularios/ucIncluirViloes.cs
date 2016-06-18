@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RPGSystem.Entidades;
 
-
 namespace RPGSystem.Formularios
 {
     public partial class ucIncluirViloes : UserControl
     {
-        public ucIncluirViloes() {
+        public ucIncluirViloes()
+        {
             InitializeComponent();
 
             List<Especie> DataCbx = new List<Especie>();
@@ -27,23 +27,20 @@ namespace RPGSystem.Formularios
             cbxEspecie.SelectedIndex = 0;
         }
 
-        public class Especie {
+        public class Especie
+        {
             public char Id { get; set; }
             public string Desc { get; set; }
 
-            public Especie(char Aid, string Adesc) {
+            public Especie(char Aid, string Adesc)
+            {
                 this.Id = Aid;
                 this.Desc = Adesc;
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            if (Parent is TabPage) {
-                ((Parent as TabPage).Parent as TabControl).TabPages.Remove(((Parent as TabPage).Parent as TabControl).SelectedTab);
-            }
-        }
-
-        private void ReloadForm() {
+        private void ReloadForm()
+        {
             cbxEspecie.SelectedIndex = 0;
             tbDescricao.Clear();
             tbNome.Clear();
@@ -51,29 +48,45 @@ namespace RPGSystem.Formularios
             tbDefesa.Clear();
         }
 
-        private void btnIncluir_Click(object sender, EventArgs e) {
+
+        private void ucIncluirViloes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIncluir_Click_1(object sender, EventArgs e)
+        {
             Viloes evil = new Viloes();
 
             evil.Especie = Convert.ToString(cbxEspecie.SelectedValue);
             evil.Nome = tbNome.Text;
             evil.Descricao = tbDescricao.Text;
-            try {
+            try
+            {
                 evil.Salvar();
-                if (MessageBox.Show("Incluido com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                if (MessageBox.Show("Incluido com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
                     ReloadForm();
                 }
-                else {
+                else
+                {
                     btnCancelar.PerformClick();
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show("Ocorreu um erro na inclusão: "+ex.Message);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro na inclusão: " + ex.Message);
                 //throw;
             }
+
         }
 
-        private void ucIncluirViloes_Load(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
+            if (Parent is TabPage)
+            {
+                ((Parent as TabPage).Parent as TabControl).TabPages.Remove(((Parent as TabPage).Parent as TabControl).SelectedTab);
+            }
 
         }
     }

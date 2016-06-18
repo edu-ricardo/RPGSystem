@@ -133,6 +133,7 @@
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnIncluir
             // 
@@ -142,6 +143,7 @@
             this.btnIncluir.TabIndex = 7;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click_1);
             // 
             // ucIncluirViloes
             // 
@@ -161,7 +163,7 @@
             this.Controls.Add(this.lblEspecie);
             this.Font = new System.Drawing.Font("Tahoma", 9.25F);
             this.Name = "ucIncluirViloes";
-            this.Size = new System.Drawing.Size(588, 500);
+            this.Size = new System.Drawing.Size(551, 457);
             this.Load += new System.EventHandler(this.ucIncluirViloes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

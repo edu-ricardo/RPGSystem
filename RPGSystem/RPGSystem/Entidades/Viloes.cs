@@ -5,11 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace RPGSystem.Entidades
-{
-    class Viloes : IEntidades
-    {
+namespace RPGSystem.Entidades{
+    class Viloes : IEntidades    {
                 
         public int IdVilao { get; set; }
         public string Especie { get; set; } // S: String | I: Integer
