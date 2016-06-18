@@ -1,6 +1,6 @@
 ﻿namespace RPGSystem.Formularios
 {
-    partial class ucInculirItem
+    partial class ucIncluirItem
     {
         /// <summary> 
         /// Required designer variable.
