@@ -129,6 +129,12 @@
     <Compile Include="Formularios\ucListarAtributos.Designer.cs">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucListarItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucListarItem.Designer.cs">
+      <DependentUpon>ucListarItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucListarItem.resx">
+      <DependentUpon>ucListarItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>

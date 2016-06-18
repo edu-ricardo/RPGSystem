@@ -53,7 +53,7 @@ namespace RPGSystem.Entidades {
             }
         }
 
-        public List<Item> ListarTodos() {
+        public static List<Item> ListarTodos() {
             ItemDAO dao = new ItemDAO();
             return dao.ListarItem();
         }
