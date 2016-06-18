@@ -33,18 +33,18 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.tbDefesa = new System.Windows.Forms.TextBox();
+            this.tbAtaque = new System.Windows.Forms.TextBox();
+            this.tbDescricao = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.cbxEspecie = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxEspecie = new System.Windows.Forms.ComboBox();
-            this.tbNome = new System.Windows.Forms.TextBox();
-            this.tbDescricao = new System.Windows.Forms.TextBox();
-            this.tbAtaque = new System.Windows.Forms.TextBox();
-            this.tbDefesa = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scListarViloes)).BeginInit();
             this.scListarViloes.Panel1.SuspendLayout();
             this.scListarViloes.Panel2.SuspendLayout();
@@ -105,6 +105,7 @@
             this.btnReload.TabIndex = 6;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click_1);
             // 
             // btnEditar
             // 
@@ -126,6 +127,66 @@
             this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(356, 432);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Location = new System.Drawing.Point(275, 432);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            // 
+            // tbDefesa
+            // 
+            this.tbDefesa.Location = new System.Drawing.Point(78, 395);
+            this.tbDefesa.Name = "tbDefesa";
+            this.tbDefesa.Size = new System.Drawing.Size(172, 22);
+            this.tbDefesa.TabIndex = 12;
+            // 
+            // tbAtaque
+            // 
+            this.tbAtaque.Location = new System.Drawing.Point(78, 367);
+            this.tbAtaque.Name = "tbAtaque";
+            this.tbAtaque.Size = new System.Drawing.Size(172, 22);
+            this.tbAtaque.TabIndex = 11;
+            // 
+            // tbDescricao
+            // 
+            this.tbDescricao.Location = new System.Drawing.Point(78, 121);
+            this.tbDescricao.Multiline = true;
+            this.tbDescricao.Name = "tbDescricao";
+            this.tbDescricao.Size = new System.Drawing.Size(348, 240);
+            this.tbDescricao.TabIndex = 11;
+            // 
+            // tbNome
+            // 
+            this.tbNome.Location = new System.Drawing.Point(78, 61);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(348, 22);
+            this.tbNome.TabIndex = 9;
+            // 
+            // cbxEspecie
+            // 
+            this.cbxEspecie.FormattingEnabled = true;
+            this.cbxEspecie.Location = new System.Drawing.Point(78, 3);
+            this.cbxEspecie.Name = "cbxEspecie";
+            this.cbxEspecie.Size = new System.Drawing.Size(172, 22);
+            this.cbxEspecie.TabIndex = 8;
             // 
             // label5
             // 
@@ -171,63 +232,6 @@
             this.label1.Size = new System.Drawing.Size(48, 14);
             this.label1.TabIndex = 5;
             this.label1.Text = "Espécie";
-            // 
-            // cbxEspecie
-            // 
-            this.cbxEspecie.FormattingEnabled = true;
-            this.cbxEspecie.Location = new System.Drawing.Point(78, 3);
-            this.cbxEspecie.Name = "cbxEspecie";
-            this.cbxEspecie.Size = new System.Drawing.Size(172, 22);
-            this.cbxEspecie.TabIndex = 8;
-            // 
-            // tbNome
-            // 
-            this.tbNome.Location = new System.Drawing.Point(78, 61);
-            this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(348, 22);
-            this.tbNome.TabIndex = 9;
-            // 
-            // tbDescricao
-            // 
-            this.tbDescricao.Location = new System.Drawing.Point(78, 121);
-            this.tbDescricao.Multiline = true;
-            this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(348, 240);
-            this.tbDescricao.TabIndex = 11;
-            // 
-            // tbAtaque
-            // 
-            this.tbAtaque.Location = new System.Drawing.Point(78, 367);
-            this.tbAtaque.Name = "tbAtaque";
-            this.tbAtaque.Size = new System.Drawing.Size(172, 22);
-            this.tbAtaque.TabIndex = 11;
-            // 
-            // tbDefesa
-            // 
-            this.tbDefesa.Location = new System.Drawing.Point(78, 395);
-            this.tbDefesa.Name = "tbDefesa";
-            this.tbDefesa.Size = new System.Drawing.Size(172, 22);
-            this.tbDefesa.TabIndex = 12;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(273, 432);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 8;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(354, 432);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // ucListarViloes
             // 

@@ -19,7 +19,19 @@ namespace RPGSystem.Formularios {
             dgvLista.Columns[0].Visible = false;
         }
 
-        public ucListarItem() {
+        public class Tipo
+        {
+            public char Id { get; set; }
+            public string Desc { get; set; }
+
+            public Tipo(char Aid, string Adesc)
+            {
+                this.Id = Aid;
+                this.Desc = Adesc;
+            }
+        }
+
+            public ucListarItem() {
             InitializeComponent();
             reloadGrid();
 
