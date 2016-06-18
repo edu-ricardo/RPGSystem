@@ -58,7 +58,7 @@ namespace RPGSystem.Formularios {
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e) {
-            TabPage tpListAttributo = new TabPage("Listar Atributo");
+            TabPage tpListAttributo = new TabPage("Listar/Alterar Atributo");
             ucListarAtributos TelaListAttr = new ucListarAtributos();
             TelaListAttr.Parent = this;
             TelaListAttr.Dock = DockStyle.Fill;
@@ -69,6 +69,49 @@ namespace RPGSystem.Formularios {
                 tpListAttributo.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }
             tcMestre.TabPages.Add(tpListAttributo);
+        }
+
+        private void incluirToolStripMenuItem1_Click(object sender, EventArgs e) {
+            TabPage tpIncluirItem = new TabPage("Incluir Item");
+            ucIncluirItem TelaIncItem = new ucIncluirItem();
+            TelaIncItem.Parent = this;
+            TelaIncItem.Dock = DockStyle.Fill;
+            tpIncluirItem.Controls.Add(TelaIncItem);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpIncluirItem.AutoScroll = true;
+                tpIncluirItem.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpIncluirItem.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpIncluirItem);
+        }
+
+        private void incluirToolStripMenuItem2_Click(object sender, EventArgs e) {
+            TabPage tpIncluirViloes = new TabPage("Incluir Vilões");
+            ucIncluirViloes TelaIncViloes = new ucIncluirViloes();
+            TelaIncViloes.Parent = this;
+            TelaIncViloes.Dock = DockStyle.Fill;
+            tpIncluirViloes.Controls.Add(TelaIncViloes);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpIncluirViloes.AutoScroll = true;
+                tpIncluirViloes.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpIncluirViloes.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpIncluirViloes);
+        }
+
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e) {
+            TabPage tpAlterarViloes = new TabPage("Listar/Alterar Vilões");
+            ucListarViloes TelaListViloes = new ucListarViloes();
+            TelaListViloes.Parent = this;
+            TelaListViloes.Dock = DockStyle.Fill;
+            tpAlterarViloes.Controls.Add(TelaListViloes);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpAlterarViloes.AutoScroll = true;
+                tpAlterarViloes.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpAlterarViloes.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpAlterarViloes);
+
         }
     }
 }

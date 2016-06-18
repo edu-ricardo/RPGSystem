@@ -27,23 +27,23 @@
             this.msMestre = new System.Windows.Forms.MenuStrip();
             this.históriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.capituloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incluirToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.históriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atributosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vilõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.armasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripInfoUser = new System.Windows.Forms.ToolStripComboBox();
-            this.tcMestre = new System.Windows.Forms.TabControl();
-            this.incluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.incluirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.incluirToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.armasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripInfoUser = new System.Windows.Forms.ToolStripComboBox();
             this.espéciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incluirToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tcMestre = new System.Windows.Forms.TabControl();
             this.msMestre.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,13 +78,25 @@
             this.incluirToolStripMenuItem3,
             this.alterarToolStripMenuItem1});
             this.capituloToolStripMenuItem.Name = "capituloToolStripMenuItem";
-            this.capituloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.capituloToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.capituloToolStripMenuItem.Text = "&Capitulo";
+            // 
+            // incluirToolStripMenuItem3
+            // 
+            this.incluirToolStripMenuItem3.Name = "incluirToolStripMenuItem3";
+            this.incluirToolStripMenuItem3.Size = new System.Drawing.Size(109, 22);
+            this.incluirToolStripMenuItem3.Text = "Incluir";
+            // 
+            // alterarToolStripMenuItem1
+            // 
+            this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
+            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
+            this.alterarToolStripMenuItem1.Text = "Alterar";
             // 
             // históriaToolStripMenuItem1
             // 
             this.históriaToolStripMenuItem1.Name = "históriaToolStripMenuItem1";
-            this.históriaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.históriaToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
             this.históriaToolStripMenuItem1.Text = "História";
             // 
             // atributosToolStripMenuItem
@@ -119,6 +131,20 @@
             this.vilõesToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
             this.vilõesToolStripMenuItem.Text = "&Vilões";
             // 
+            // incluirToolStripMenuItem2
+            // 
+            this.incluirToolStripMenuItem2.Name = "incluirToolStripMenuItem2";
+            this.incluirToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.incluirToolStripMenuItem2.Text = "Incluir";
+            this.incluirToolStripMenuItem2.Click += new System.EventHandler(this.incluirToolStripMenuItem2_Click);
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alterarToolStripMenuItem.Text = "Listar";
+            this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
+            // 
             // armasToolStripMenuItem
             // 
             this.armasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,28 +154,12 @@
             this.armasToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.armasToolStripMenuItem.Text = "&Itens";
             // 
-            // toolStripInfoUser
-            // 
-            this.toolStripInfoUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripInfoUser.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.toolStripInfoUser.Name = "toolStripInfoUser";
-            this.toolStripInfoUser.Size = new System.Drawing.Size(140, 23);
-            // 
-            // tcMestre
-            // 
-            this.tcMestre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMestre.Location = new System.Drawing.Point(0, 27);
-            this.tcMestre.Name = "tcMestre";
-            this.tcMestre.SelectedIndex = 0;
-            this.tcMestre.Size = new System.Drawing.Size(919, 489);
-            this.tcMestre.TabIndex = 1;
-            this.tcMestre.DoubleClick += new System.EventHandler(this.tcMestre_DoubleClick);
-            // 
             // incluirToolStripMenuItem1
             // 
             this.incluirToolStripMenuItem1.Name = "incluirToolStripMenuItem1";
             this.incluirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.incluirToolStripMenuItem1.Text = "Incluir";
+            this.incluirToolStripMenuItem1.Click += new System.EventHandler(this.incluirToolStripMenuItem1_Click);
             // 
             // listarToolStripMenuItem1
             // 
@@ -157,29 +167,12 @@
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.listarToolStripMenuItem1.Text = "Listar";
             // 
-            // incluirToolStripMenuItem2
+            // toolStripInfoUser
             // 
-            this.incluirToolStripMenuItem2.Name = "incluirToolStripMenuItem2";
-            this.incluirToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.incluirToolStripMenuItem2.Text = "Incluir";
-            // 
-            // alterarToolStripMenuItem
-            // 
-            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.alterarToolStripMenuItem.Text = "Alterar";
-            // 
-            // incluirToolStripMenuItem3
-            // 
-            this.incluirToolStripMenuItem3.Name = "incluirToolStripMenuItem3";
-            this.incluirToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
-            this.incluirToolStripMenuItem3.Text = "Incluir";
-            // 
-            // alterarToolStripMenuItem1
-            // 
-            this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
-            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.alterarToolStripMenuItem1.Text = "Alterar";
+            this.toolStripInfoUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripInfoUser.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.toolStripInfoUser.Name = "toolStripInfoUser";
+            this.toolStripInfoUser.Size = new System.Drawing.Size(140, 23);
             // 
             // espéciesToolStripMenuItem
             // 
@@ -193,14 +186,24 @@
             // incluirToolStripMenuItem4
             // 
             this.incluirToolStripMenuItem4.Name = "incluirToolStripMenuItem4";
-            this.incluirToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.incluirToolStripMenuItem4.Size = new System.Drawing.Size(109, 22);
             this.incluirToolStripMenuItem4.Text = "Incluir";
             // 
             // alterarToolStripMenuItem2
             // 
             this.alterarToolStripMenuItem2.Name = "alterarToolStripMenuItem2";
-            this.alterarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.alterarToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
             this.alterarToolStripMenuItem2.Text = "Alterar";
+            // 
+            // tcMestre
+            // 
+            this.tcMestre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcMestre.Location = new System.Drawing.Point(0, 27);
+            this.tcMestre.Name = "tcMestre";
+            this.tcMestre.SelectedIndex = 0;
+            this.tcMestre.Size = new System.Drawing.Size(919, 489);
+            this.tcMestre.TabIndex = 1;
+            this.tcMestre.DoubleClick += new System.EventHandler(this.tcMestre_DoubleClick);
             // 
             // frmMestre
             // 

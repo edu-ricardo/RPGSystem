@@ -110,14 +110,17 @@
     <Compile Include="Formularios\ucIncluirAtributo.Designer.cs">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucIncluirItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirItem.Designer.cs">
+      <DependentUpon>ucIncluirItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ucIncluirViloes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Formularios\ucInculirItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Formularios\ucInculirItem.Designer.cs">
-      <DependentUpon>ucInculirItem.cs</DependentUpon>
+    <Compile Include="Formularios\ucIncluirViloes.Designer.cs">
+      <DependentUpon>ucIncluirViloes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ucListarAtributos.cs">
       <SubType>UserControl</SubType>
@@ -156,11 +159,11 @@
     <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucIncluirItem.resx">
+      <DependentUpon>ucIncluirItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirViloes.resx">
       <DependentUpon>ucIncluirViloes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ucInculirItem.resx">
-      <DependentUpon>ucInculirItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
