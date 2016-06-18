@@ -44,89 +44,89 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(19, 26);
+            this.lblNome.Location = new System.Drawing.Point(22, 32);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.Size = new System.Drawing.Size(41, 16);
             this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
+            this.lblNome.Text = "Nome";
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(19, 77);
+            this.lblTipo.Location = new System.Drawing.Point(22, 95);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(34, 13);
+            this.lblTipo.Size = new System.Drawing.Size(33, 16);
             this.lblTipo.TabIndex = 1;
-            this.lblTipo.Text = "Tipo: ";
+            this.lblTipo.Text = "Tipo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 142);
+            this.label1.Location = new System.Drawing.Point(26, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Range:";
+            this.label1.Text = "Range";
             // 
             // lblAtaque
             // 
             this.lblAtaque.AutoSize = true;
-            this.lblAtaque.Location = new System.Drawing.Point(25, 214);
+            this.lblAtaque.Location = new System.Drawing.Point(29, 263);
             this.lblAtaque.Name = "lblAtaque";
-            this.lblAtaque.Size = new System.Drawing.Size(44, 13);
+            this.lblAtaque.Size = new System.Drawing.Size(48, 16);
             this.lblAtaque.TabIndex = 3;
-            this.lblAtaque.Text = "Ataque:";
+            this.lblAtaque.Text = "Ataque";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 319);
+            this.button1.Location = new System.Drawing.Point(51, 393);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(87, 29);
             this.button1.TabIndex = 4;
             this.button1.Text = "Incluir";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(149, 319);
+            this.btnCancelar.Location = new System.Drawing.Point(174, 393);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(87, 29);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(64, 26);
+            this.txtNome.Location = new System.Drawing.Point(84, 32);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(116, 23);
             this.txtNome.TabIndex = 6;
             // 
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(64, 77);
+            this.cbxTipo.Location = new System.Drawing.Point(84, 95);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo.Size = new System.Drawing.Size(140, 24);
             this.cbxTipo.TabIndex = 7;
             // 
             // tckRange
             // 
-            this.tckRange.Location = new System.Drawing.Point(70, 130);
+            this.tckRange.Location = new System.Drawing.Point(84, 175);
             this.tckRange.Name = "tckRange";
-            this.tckRange.Size = new System.Drawing.Size(104, 45);
+            this.tckRange.Size = new System.Drawing.Size(121, 45);
             this.tckRange.TabIndex = 8;
             // 
             // txtAtaque
             // 
-            this.txtAtaque.Location = new System.Drawing.Point(76, 206);
+            this.txtAtaque.Location = new System.Drawing.Point(84, 256);
             this.txtAtaque.Name = "txtAtaque";
-            this.txtAtaque.Size = new System.Drawing.Size(100, 20);
+            this.txtAtaque.Size = new System.Drawing.Size(116, 23);
             this.txtAtaque.TabIndex = 9;
             // 
             // ucInculirItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtAtaque);
             this.Controls.Add(this.tckRange);
@@ -138,8 +138,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblNome);
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucInculirItem";
-            this.Size = new System.Drawing.Size(551, 457);
+            this.Size = new System.Drawing.Size(576, 436);
             ((System.ComponentModel.ISupportInitialize)(this.tckRange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
