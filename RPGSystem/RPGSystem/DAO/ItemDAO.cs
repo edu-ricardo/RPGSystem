@@ -73,6 +73,22 @@ namespace RPGSystem.DAO {
             string sql = "SELECT * FROM Item";
             SqlDataReader Reader = db.Query(sql);
 
+            List<IEntidades> ItemLst = new List<Item>();
+
+            while (Reader.Read()) {
+                Item item = new Item(Convert.ToString(Reader["tipo"]), Convert.ToString(Reader["nome"]),
+                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["atack"]));
+                item.IdItem = Convert.ToInt32(Reader["idAtributo"]);
+                ItemLst.Add(item);
+            }
+
+            return ItemLst;
+        }
+
+        public List<Item> ListarItem() {
+            string sql = "SELECT * FROM Item";
+            SqlDataReader Reader = db.Query(sql);
+
             List<Item> ItemLst = new List<Item>();
 
             while (Reader.Read()) {
