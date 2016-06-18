@@ -73,7 +73,7 @@ namespace RPGSystem.DAO {
             string sql = "SELECT * FROM Item";
             SqlDataReader Reader = db.Query(sql);
 
-            List<IEntidades> ItemLst = new List<Item>();
+            List<IEntidades> ItemLst = new List<IEntidades>();
 
             while (Reader.Read()) {
                 Item item = new Item(Convert.ToString(Reader["tipo"]), Convert.ToString(Reader["nome"]),
@@ -101,5 +101,5 @@ namespace RPGSystem.DAO {
             return ItemLst;
         }
     }
-    }
+
 }
