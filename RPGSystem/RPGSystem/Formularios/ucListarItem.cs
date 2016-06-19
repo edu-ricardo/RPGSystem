@@ -19,6 +19,7 @@ namespace RPGSystem.Formularios {
             bs.DataSource = Item.ListarTodos();
             dgvLista.DataSource = bs;
             dgvLista.Columns[0].Visible = false;
+            dgvLista.Columns[1].Visible = false;
         }
 
         public void ReloadForm() {

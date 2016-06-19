@@ -11,6 +11,8 @@ namespace RPGSystem.Entidades {
 
         public int idEspecie { get; set; }
 
+        public string Especie { get; set; }
+
         public string Nome { get; set; }
 
         public int Range { get; set; }
@@ -57,6 +59,10 @@ namespace RPGSystem.Entidades {
         public static List<Item> ListarTodos() {
             ItemDAO dao = new ItemDAO();
             return dao.ListarItem();
+        }
+
+        public void DiscoverEspecie() {            
+            this.Especie = Entidades.Especie.ListarTodas().Find(x => x.idEspecie == this.idEspecie).nome;
         }
     }
 }

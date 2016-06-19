@@ -21,6 +21,7 @@ namespace RPGSystem.Formularios
             bs.DataSource = Viloes.ListarTodos();
             dgvLista.DataSource = bs;
             dgvLista.Columns[0].Visible = false;
+            dgvLista.Columns[1].Visible = false;
         }
 
         public ucListarViloes()

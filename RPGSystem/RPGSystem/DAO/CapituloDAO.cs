@@ -17,8 +17,12 @@ namespace RPGSystem.DAO {
 
             Capitulo cap = (obj as Capitulo);
 
-            string sql = "UPDATE Capitulo SET Texto = @texto, titulo = @titulo, @startCharpters) " +
-                        "WHERE idCapitulo = " + Convert.ToString(id);
+            string sql = "UPDATE Capitulo SET Texto = @texto, titulo = @titulo,startChapter = @startCharpter ";
+
+                if (cap.idHistoria != int.MaxValue)
+                    sql += ",idHistoria = @idHistoria ";
+
+                sql += "WHERE idCapitulo = " + Convert.ToString(id);
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
@@ -26,10 +30,15 @@ namespace RPGSystem.DAO {
             ParamsName.Add("@texto");
             ParamsName.Add("@titulo");
             ParamsName.Add("@startCharpter");
-
+            if (cap.idHistoria != int.MaxValue)
+                ParamsName.Add("@idHistoria");
             Params.Add(cap.Texto);
             Params.Add(cap.Titulo);
             Params.Add(Convert.ToInt32(cap.startChapter));
+
+            if (cap.idHistoria != int.MaxValue)
+                Params.Add(cap.idHistoria);
+
 
             db.ExecQuery(sql, ParamsName, Params);
             
@@ -48,6 +57,8 @@ namespace RPGSystem.DAO {
 
                     Params.Add(cap.idCapitulo);
                     Params.Add(cap.Items.ElementAt(i).IdItem);
+
+                    db.ExecQuery(sql, ParamsName, Params);
                 }
             }
 
@@ -66,6 +77,8 @@ namespace RPGSystem.DAO {
 
                     Params.Add(cap.idCapitulo);
                     Params.Add(cap.Viloes.ElementAt(i).IdVilao);
+
+                    db.ExecQuery(sql, ParamsName, Params);
                 }
             }
         }
@@ -168,7 +181,7 @@ namespace RPGSystem.DAO {
                 while (viloesR.Read()) {
                     cap.Viloes.Add(Viloes.ListarTodos().Find(x => x.IdVilao == Convert.ToInt32(viloesR["idVilao"])));
                 }
-
+                CapLst.Add(cap);
             }
 
             return CapLst;
@@ -196,6 +209,7 @@ namespace RPGSystem.DAO {
                     cap.Viloes.Add(Viloes.ListarTodos().Find(x => x.IdVilao == Convert.ToInt32(viloesR["idVilao"])));
                 }
 
+                CapLst.Add(cap);
             }
 
             return CapLst;

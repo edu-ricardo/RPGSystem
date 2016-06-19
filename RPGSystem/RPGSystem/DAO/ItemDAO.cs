@@ -96,6 +96,7 @@ namespace RPGSystem.DAO {
                 Item item = new Item(Convert.ToString(Reader["nome"]),
                     Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["attack"]), Convert.ToInt32(Reader["idEspecie"]));
                 item.IdItem = Convert.ToInt32(Reader["idItem"]);
+                item.DiscoverEspecie();
                 ItemLst.Add(item);
             }
 

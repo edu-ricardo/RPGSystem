@@ -162,6 +162,12 @@
     <Compile Include="Formularios\ucListarAtributos.Designer.cs">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucListarCapitulos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucListarCapitulos.Designer.cs">
+      <DependentUpon>ucListarCapitulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ucListarEspecies.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucListarCapitulos.resx">
+      <DependentUpon>ucListarCapitulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarEspecies.resx">
       <DependentUpon>ucListarEspecies.cs</DependentUpon>

@@ -21,6 +21,8 @@ namespace RPGSystem.Formularios {
         public frmMestre(Usuario AUser) {
             InitializeComponent();
             SetUser(AUser);
+
+            toolStripInfoUser.Text = AUser.Login;
             if (!HasAccess()) {
                 throw new AccessNotDefined("Acesso Negado a Tela de Mestre!");
             }
@@ -176,6 +178,21 @@ namespace RPGSystem.Formularios {
                 tpIncluirCap.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }
             tcMestre.TabPages.Add(tpIncluirCap);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
+        }
+
+        private void alterarToolStripMenuItem1_Click(object sender, EventArgs e) {
+            TabPage tpListarCap = new TabPage("Listar/Alterar Capitulo");
+            ucListarCapitulos TelaListarCap = new ucListarCapitulos();
+            TelaListarCap.Parent = this;
+            TelaListarCap.Dock = DockStyle.Fill;
+            tpListarCap.Controls.Add(TelaListarCap);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpListarCap.AutoScroll = true;
+                tpListarCap.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpListarCap.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpListarCap);
             tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
     }

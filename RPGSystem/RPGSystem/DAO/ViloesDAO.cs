@@ -94,6 +94,7 @@ namespace RPGSystem.DAO
             while (Reader.Read()) {
                 Viloes EvilAux = new Viloes(Convert.ToInt32(Reader["idEspecie"]), Convert.ToString(Reader["nome"]), Convert.ToString(Reader["descricao"]), Convert.ToInt32(Reader["ataque"]), Convert.ToInt32(Reader["defesa"]));
                 EvilAux.IdVilao = Convert.ToInt32(Reader["idVilao"]);
+                EvilAux.DiscoverEspecie();
                 EvilLst.Add(EvilAux);
             }
 

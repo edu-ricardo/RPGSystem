@@ -9,7 +9,8 @@ namespace RPGSystem.Entidades{
     class Viloes : IEntidades    {
                 
         public int IdVilao { get; set; }
-        public int idEspecie { get; set; } 
+        public int idEspecie { get; set; }
+        public string Especie { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public int Ataque { get; set; }
@@ -40,6 +41,10 @@ namespace RPGSystem.Entidades{
             else {
                 throw new ArgumentNullException("Vilão ainda não foi incluido e não pode ser excluido!");
             }
+        }
+
+        public void DiscoverEspecie() {
+            this.Especie = Entidades.Especie.ListarTodas().Find(x => x.idEspecie == this.idEspecie).nome;
         }
 
         public void Salvar() {
