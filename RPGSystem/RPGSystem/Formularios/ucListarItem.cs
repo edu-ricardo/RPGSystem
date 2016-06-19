@@ -22,7 +22,7 @@ namespace RPGSystem.Formularios {
         public ucListarItem() {
             InitializeComponent();
             reloadGrid();
-
+            
             List<Tipo> DataCbx = new List<Tipo>();
 
         }
