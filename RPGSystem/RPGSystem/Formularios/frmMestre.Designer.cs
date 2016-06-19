@@ -86,6 +86,7 @@
             this.incluirToolStripMenuItem3.Name = "incluirToolStripMenuItem3";
             this.incluirToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.incluirToolStripMenuItem3.Text = "Incluir";
+            this.incluirToolStripMenuItem3.Click += new System.EventHandler(this.incluirToolStripMenuItem3_Click);
             // 
             // alterarToolStripMenuItem1
             // 
@@ -157,14 +158,14 @@
             // incluirToolStripMenuItem1
             // 
             this.incluirToolStripMenuItem1.Name = "incluirToolStripMenuItem1";
-            this.incluirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.incluirToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.incluirToolStripMenuItem1.Text = "Incluir";
             this.incluirToolStripMenuItem1.Click += new System.EventHandler(this.incluirToolStripMenuItem1_Click);
             // 
             // listarToolStripMenuItem1
             // 
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.listarToolStripMenuItem1.Text = "Listar/Alterar";
             this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 

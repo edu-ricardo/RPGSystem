@@ -163,5 +163,20 @@ namespace RPGSystem.Formularios {
             tcMestre.TabPages.Add(tpListarItens);
             tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
+
+        private void incluirToolStripMenuItem3_Click(object sender, EventArgs e) {
+            TabPage tpIncluirCap = new TabPage("Incluir Capitulo");
+            ucIncluirCapitulo TelaIncCap = new ucIncluirCapitulo();
+            TelaIncCap.Parent = this;
+            TelaIncCap.Dock = DockStyle.Fill;
+            tpIncluirCap.Controls.Add(TelaIncCap);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpIncluirCap.AutoScroll = true;
+                tpIncluirCap.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpIncluirCap.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpIncluirCap);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
+        }
     }
 }

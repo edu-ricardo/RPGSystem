@@ -38,6 +38,8 @@
             this.cbxItens = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnDelVil = new System.Windows.Forms.Button();
+            this.btnDelItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -124,33 +126,35 @@
             this.cbxViloes.FormattingEnabled = true;
             this.cbxViloes.Location = new System.Drawing.Point(551, 201);
             this.cbxViloes.Name = "cbxViloes";
-            this.cbxViloes.Size = new System.Drawing.Size(228, 22);
+            this.cbxViloes.Size = new System.Drawing.Size(179, 22);
             this.cbxViloes.TabIndex = 10;
             // 
             // btnAddVil
             // 
-            this.btnAddVil.Location = new System.Drawing.Point(785, 201);
+            this.btnAddVil.Location = new System.Drawing.Point(734, 201);
             this.btnAddVil.Name = "btnAddVil";
             this.btnAddVil.Size = new System.Drawing.Size(51, 22);
             this.btnAddVil.TabIndex = 11;
             this.btnAddVil.Text = "+";
             this.btnAddVil.UseVisualStyleBackColor = true;
+            this.btnAddVil.Click += new System.EventHandler(this.btnAddVil_Click);
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(785, 393);
+            this.btnAddItem.Location = new System.Drawing.Point(736, 393);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(51, 22);
             this.btnAddItem.TabIndex = 13;
             this.btnAddItem.Text = "+";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // cbxItens
             // 
             this.cbxItens.FormattingEnabled = true;
             this.cbxItens.Location = new System.Drawing.Point(551, 393);
             this.cbxItens.Name = "cbxItens";
-            this.cbxItens.Size = new System.Drawing.Size(228, 22);
+            this.cbxItens.Size = new System.Drawing.Size(179, 22);
             this.cbxItens.TabIndex = 12;
             // 
             // btnSalvar
@@ -162,6 +166,7 @@
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -172,11 +177,34 @@
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnDelVil
+            // 
+            this.btnDelVil.Location = new System.Drawing.Point(789, 201);
+            this.btnDelVil.Name = "btnDelVil";
+            this.btnDelVil.Size = new System.Drawing.Size(51, 22);
+            this.btnDelVil.TabIndex = 16;
+            this.btnDelVil.Text = "-";
+            this.btnDelVil.UseVisualStyleBackColor = true;
+            this.btnDelVil.Click += new System.EventHandler(this.btnDelVil_Click);
+            // 
+            // btnDelItem
+            // 
+            this.btnDelItem.Location = new System.Drawing.Point(789, 392);
+            this.btnDelItem.Name = "btnDelItem";
+            this.btnDelItem.Size = new System.Drawing.Size(51, 23);
+            this.btnDelItem.TabIndex = 17;
+            this.btnDelItem.Text = "-";
+            this.btnDelItem.UseVisualStyleBackColor = true;
+            this.btnDelItem.Click += new System.EventHandler(this.btnDelItem_Click);
             // 
             // ucIncluirCapitulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDelItem);
+            this.Controls.Add(this.btnDelVil);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnAddItem);
@@ -217,5 +245,7 @@
         private System.Windows.Forms.ComboBox cbxItens;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnDelVil;
+        private System.Windows.Forms.Button btnDelItem;
     }
 }

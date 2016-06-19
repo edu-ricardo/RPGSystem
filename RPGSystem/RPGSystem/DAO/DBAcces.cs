@@ -10,6 +10,22 @@ namespace RPGSystem.DAO {
     public class DBAcces {
         string StrCon = ConfigurationManager.ConnectionStrings["RPGSystem"].ConnectionString;
         
+        public int ExecQueryReturning(string Query, List<string> ParamsName, List<object> Parameters) {
+            SqlConnection Conexao = new SqlConnection();
+            Conexao.ConnectionString = StrCon;
+            Conexao.Open();
+
+            SqlCommand Command = new SqlCommand();
+            Command.Connection = Conexao;
+            Command.CommandText = Query + ";SELECT SCOPE_IDENTITY();";
+
+            // Adiciona parametros
+            for (int i = 0; i < Parameters.Count; i++) {
+                Command.Parameters.AddWithValue(ParamsName[i], Parameters[i]);
+            }
+            int mod = Command.ExecuteNonQuery();
+            return mod;
+        }
 
         public SqlCommand ExecQuery(string Query) {
             SqlConnection Conexao = new SqlConnection();

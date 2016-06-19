@@ -74,10 +74,19 @@ namespace RPGSystem.DAO {
             if (!(obj is Capitulo))
                 throw new InvalidCastException("Objeto não é um atributo");
 
-            Capitulo cap = (obj as Capitulo);            
+            Capitulo cap = (obj as Capitulo);
 
-            string sql = "INSERT INTO Capitulo (Texto, titulo, startChapter, idHistoria) " +
-                        "VALUES(@texto, @titulo, @startCharpter, @idHistoria)";
+            string sql = "INSERT INTO Capitulo (Texto, titulo, startChapter ";
+            if (cap.idHistoria != int.MaxValue)
+                sql += ", idHistoria";
+
+            sql += ") " +
+                "VALUES(@texto, @titulo, @startCharpter ";
+
+            if (cap.idHistoria != int.MaxValue)
+                sql += ", @idHistoria";
+
+                sql+= ")";
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
@@ -85,20 +94,17 @@ namespace RPGSystem.DAO {
             ParamsName.Add("@texto");
             ParamsName.Add("@titulo");
             ParamsName.Add("@startCharpter");
-            ParamsName.Add("@idHistoria");
+            if (cap.idHistoria != int.MaxValue)
+                ParamsName.Add("@idHistoria");
 
             Params.Add(cap.Texto);
             Params.Add(cap.Titulo);
             Params.Add(Convert.ToInt32(cap.startChapter));
+
             if (cap.idHistoria != int.MaxValue)
                 Params.Add(Convert.ToInt32(cap.idHistoria));
 
-            db.ExecQuery(sql, ParamsName, Params);
-
-            SqlDataReader dr = db.Query("SELECT SCOPE_IDENTITY() id");
-            dr.Read();
-
-            int id = Convert.ToInt32(dr["id"]);
+            int id = db.ExecQueryReturning(sql, ParamsName, Params);
 
             if (cap.Items != null) {
                 for (int i = 0; i < cap.Items.Count; i++) {
@@ -113,6 +119,7 @@ namespace RPGSystem.DAO {
 
                     Params.Add(id);
                     Params.Add(cap.Items.ElementAt(i).IdItem);
+                    db.ExecQuery(sql, ParamsName, Params);
                 }
             }
 
@@ -129,6 +136,7 @@ namespace RPGSystem.DAO {
 
                     Params.Add(id);
                     Params.Add(cap.Viloes.ElementAt(i).IdVilao);
+                    db.ExecQuery(sql, ParamsName, Params);
                 }
             }
         }
