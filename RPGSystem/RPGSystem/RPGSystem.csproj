@@ -100,6 +100,12 @@
     <Compile Include="Formularios\frmJogador.Designer.cs">
       <DependentUpon>frmJogador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmJogo.Designer.cs">
+      <DependentUpon>frmJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmMestre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,18 @@
     </Compile>
     <Compile Include="Formularios\ucIncluirViloes.Designer.cs">
       <DependentUpon>ucIncluirViloes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ucJogarHistoria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucJogarHistoria.Designer.cs">
+      <DependentUpon>ucJogarHistoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ucJogarLuta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucJogarLuta.Designer.cs">
+      <DependentUpon>ucJogarLuta.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ucListarAtributos.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +193,9 @@
     <EmbeddedResource Include="Formularios\frmJogador.resx">
       <DependentUpon>frmJogador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmJogo.resx">
+      <DependentUpon>frmJogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMestre.resx">
       <DependentUpon>frmMestre.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +210,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirViloes.resx">
       <DependentUpon>ucIncluirViloes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucJogarHistoria.resx">
+      <DependentUpon>ucJogarHistoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucJogarLuta.resx">
+      <DependentUpon>ucJogarLuta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
