@@ -93,7 +93,7 @@
             this.tbNome.Location = new System.Drawing.Point(142, 77);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(366, 22);
-            this.tbNome.TabIndex = 5;
+            this.tbNome.TabIndex = 1;
             // 
             // tbDescricao
             // 
@@ -101,21 +101,21 @@
             this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.Size = new System.Drawing.Size(366, 188);
-            this.tbDescricao.TabIndex = 5;
+            this.tbDescricao.TabIndex = 2;
             // 
             // tbAtaque
             // 
             this.tbAtaque.Location = new System.Drawing.Point(145, 338);
             this.tbAtaque.Name = "tbAtaque";
             this.tbAtaque.Size = new System.Drawing.Size(118, 22);
-            this.tbAtaque.TabIndex = 5;
+            this.tbAtaque.TabIndex = 3;
             // 
             // tbDefesa
             // 
             this.tbDefesa.Location = new System.Drawing.Point(145, 374);
             this.tbDefesa.Name = "tbDefesa";
             this.tbDefesa.Size = new System.Drawing.Size(118, 22);
-            this.tbDefesa.TabIndex = 5;
+            this.tbDefesa.TabIndex = 4;
             // 
             // cbxEspecie
             // 
@@ -123,14 +123,14 @@
             this.cbxEspecie.Location = new System.Drawing.Point(142, 33);
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(366, 22);
-            this.cbxEspecie.TabIndex = 6;
+            this.cbxEspecie.TabIndex = 0;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(207, 427);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -140,7 +140,7 @@
             this.btnIncluir.Location = new System.Drawing.Point(94, 427);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(75, 23);
-            this.btnIncluir.TabIndex = 7;
+            this.btnIncluir.TabIndex = 5;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click_1);

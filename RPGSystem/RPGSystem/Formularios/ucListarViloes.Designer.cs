@@ -80,29 +80,35 @@
             this.scListarViloes.Panel2.Controls.Add(this.label3);
             this.scListarViloes.Panel2.Controls.Add(this.label2);
             this.scListarViloes.Panel2.Controls.Add(this.label1);
-            this.scListarViloes.Size = new System.Drawing.Size(858, 459);
-            this.scListarViloes.SplitterDistance = 424;
+            this.scListarViloes.Size = new System.Drawing.Size(1008, 503);
+            this.scListarViloes.SplitterDistance = 498;
             this.scListarViloes.SplitterWidth = 2;
             this.scListarViloes.TabIndex = 2;
             // 
             // dgvLista
             // 
+            this.dgvLista.AllowUserToAddRows = false;
+            this.dgvLista.AllowUserToDeleteRows = false;
             this.dgvLista.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvLista.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvLista.Location = new System.Drawing.Point(3, 3);
+            this.dgvLista.Location = new System.Drawing.Point(0, 0);
+            this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(422, 371);
-            this.dgvLista.TabIndex = 7;
+            this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLista.Size = new System.Drawing.Size(496, 371);
+            this.dgvLista.TabIndex = 0;
+            this.dgvLista.DoubleClick += new System.EventHandler(this.dgvLista_DoubleClick);
             // 
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReload.Location = new System.Drawing.Point(84, 431);
+            this.btnReload.Location = new System.Drawing.Point(84, 475);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(75, 23);
-            this.btnReload.TabIndex = 6;
+            this.btnReload.TabIndex = 2;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click_1);
@@ -110,10 +116,10 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 431);
+            this.btnEditar.Location = new System.Drawing.Point(3, 475);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 4;
+            this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -121,10 +127,10 @@
             // btnExcluir
             // 
             this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExcluir.Location = new System.Drawing.Point(165, 431);
+            this.btnExcluir.Location = new System.Drawing.Point(165, 475);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
@@ -132,10 +138,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(356, 432);
+            this.btnCancelar.Location = new System.Drawing.Point(436, 476);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -143,10 +149,10 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(275, 432);
+            this.btnSalvar.Location = new System.Drawing.Point(355, 476);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
@@ -156,14 +162,14 @@
             this.tbDefesa.Location = new System.Drawing.Point(78, 395);
             this.tbDefesa.Name = "tbDefesa";
             this.tbDefesa.Size = new System.Drawing.Size(172, 22);
-            this.tbDefesa.TabIndex = 12;
+            this.tbDefesa.TabIndex = 8;
             // 
             // tbAtaque
             // 
             this.tbAtaque.Location = new System.Drawing.Point(78, 367);
             this.tbAtaque.Name = "tbAtaque";
             this.tbAtaque.Size = new System.Drawing.Size(172, 22);
-            this.tbAtaque.TabIndex = 11;
+            this.tbAtaque.TabIndex = 7;
             // 
             // tbDescricao
             // 
@@ -171,14 +177,14 @@
             this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.Size = new System.Drawing.Size(348, 240);
-            this.tbDescricao.TabIndex = 11;
+            this.tbDescricao.TabIndex = 6;
             // 
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(78, 61);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(348, 22);
-            this.tbNome.TabIndex = 9;
+            this.tbNome.TabIndex = 5;
             // 
             // cbxEspecie
             // 
@@ -186,7 +192,7 @@
             this.cbxEspecie.Location = new System.Drawing.Point(78, 3);
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(172, 22);
-            this.cbxEspecie.TabIndex = 8;
+            this.cbxEspecie.TabIndex = 4;
             // 
             // label5
             // 
@@ -240,7 +246,7 @@
             this.Controls.Add(this.scListarViloes);
             this.Font = new System.Drawing.Font("Tahoma", 9F);
             this.Name = "ucListarViloes";
-            this.Size = new System.Drawing.Size(858, 459);
+            this.Size = new System.Drawing.Size(1008, 503);
             this.scListarViloes.Panel1.ResumeLayout(false);
             this.scListarViloes.Panel2.ResumeLayout(false);
             this.scListarViloes.Panel2.PerformLayout();

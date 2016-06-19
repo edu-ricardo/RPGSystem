@@ -60,7 +60,7 @@ namespace RPGSystem.DAO {
         }
 
         public void Excluir(int id) {
-            string sql = "DELETE FROM Item WHERE idAtributo = @id";
+            string sql = "DELETE FROM Item WHERE idItem = @id";
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
             ParamsName.Add("@id");
@@ -94,7 +94,7 @@ namespace RPGSystem.DAO {
 
             while (Reader.Read()) {
                 Item item = new Item(Convert.ToString(Reader["nome"]),
-                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["atack"]), Convert.ToInt32(Reader["idEspecie"]));
+                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["attack"]), Convert.ToInt32(Reader["idEspecie"]));
                 item.IdItem = Convert.ToInt32(Reader["idItem"]);
                 ItemLst.Add(item);
             }

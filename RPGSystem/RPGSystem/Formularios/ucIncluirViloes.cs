@@ -48,6 +48,9 @@ namespace RPGSystem.Formularios
             evil.idEspecie = Convert.ToInt32(cbxEspecie.SelectedValue);
             evil.Nome = tbNome.Text;
             evil.Descricao = tbDescricao.Text;
+            evil.Ataque = Convert.ToInt32(tbAtaque.Text);
+            evil.Defesa = Convert.ToInt32(tbDefesa.Text);
+
             try
             {
                 evil.Salvar();

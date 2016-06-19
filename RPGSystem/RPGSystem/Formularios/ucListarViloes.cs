@@ -18,7 +18,7 @@ namespace RPGSystem.Formularios
         private void reloadGrid()
         {
             BindingSource bs = new BindingSource();
-            bs.DataSource = Atributos.ListarTodos();
+            bs.DataSource = Viloes.ListarTodos();
             dgvLista.DataSource = bs;
             dgvLista.Columns[0].Visible = false;
         }
@@ -72,6 +72,8 @@ namespace RPGSystem.Formularios
 
                 tbNome.Text = aux.Nome;
                 tbDescricao.Text = aux.Descricao;
+                tbAtaque.Text = Convert.ToString(aux.Ataque);
+                tbDefesa.Text = Convert.ToString(aux.Defesa);
                 idAlteracao = aux.IdVilao;
                 scListarViloes.Panel2Collapsed = false;
             }
@@ -79,10 +81,8 @@ namespace RPGSystem.Formularios
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-
+            
         }
-
-
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -131,20 +131,14 @@ namespace RPGSystem.Formularios
             try
             {
                 evil.Salvar();
-                if (MessageBox.Show("Salvo com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    ReloadForm();
-                }
-                else
-                {
-                    ReloadForm();
-                    btnCancelar.PerformClick();
-                }
+                MessageBox.Show("Salvo com Sucesso!!");
+                ReloadForm();
+                btnCancelar.PerformClick();
+                reloadGrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);
-                //throw;
             }
         }
 
