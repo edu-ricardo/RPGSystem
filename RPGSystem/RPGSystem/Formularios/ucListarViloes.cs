@@ -81,17 +81,19 @@ namespace RPGSystem.Formularios
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            
+            // duplicado, esta ok
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            // duplicado, esta ok
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            ReloadForm();
+            reloadGrid();
+            scListarViloes.Panel2Collapsed = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace RPGSystem.Formularios
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            //duplicado, esta ok
         }
 
         private void btnReload_Click_1(object sender, EventArgs e)
