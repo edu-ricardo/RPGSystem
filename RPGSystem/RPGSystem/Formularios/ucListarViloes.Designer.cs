@@ -80,8 +80,8 @@
             this.scListarViloes.Panel2.Controls.Add(this.label3);
             this.scListarViloes.Panel2.Controls.Add(this.label2);
             this.scListarViloes.Panel2.Controls.Add(this.label1);
-            this.scListarViloes.Size = new System.Drawing.Size(1008, 503);
-            this.scListarViloes.SplitterDistance = 498;
+            this.scListarViloes.Size = new System.Drawing.Size(858, 459);
+            this.scListarViloes.SplitterDistance = 424;
             this.scListarViloes.SplitterWidth = 2;
             this.scListarViloes.TabIndex = 2;
             // 
@@ -98,14 +98,14 @@
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(496, 371);
+            this.dgvLista.Size = new System.Drawing.Size(422, 371);
             this.dgvLista.TabIndex = 0;
             this.dgvLista.DoubleClick += new System.EventHandler(this.dgvLista_DoubleClick);
             // 
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReload.Location = new System.Drawing.Point(84, 475);
+            this.btnReload.Location = new System.Drawing.Point(84, 431);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(75, 23);
             this.btnReload.TabIndex = 2;
@@ -116,7 +116,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 475);
+            this.btnEditar.Location = new System.Drawing.Point(3, 431);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 1;
@@ -127,7 +127,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExcluir.Location = new System.Drawing.Point(165, 475);
+            this.btnExcluir.Location = new System.Drawing.Point(165, 431);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 3;
@@ -138,7 +138,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(436, 476);
+            this.btnCancelar.Location = new System.Drawing.Point(353, 432);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 10;
@@ -149,7 +149,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(355, 476);
+            this.btnSalvar.Location = new System.Drawing.Point(275, 432);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 9;
@@ -246,7 +246,7 @@
             this.Controls.Add(this.scListarViloes);
             this.Font = new System.Drawing.Font("Tahoma", 9F);
             this.Name = "ucListarViloes";
-            this.Size = new System.Drawing.Size(1008, 503);
+            this.Size = new System.Drawing.Size(858, 459);
             this.scListarViloes.Panel1.ResumeLayout(false);
             this.scListarViloes.Panel2.ResumeLayout(false);
             this.scListarViloes.Panel2.PerformLayout();
