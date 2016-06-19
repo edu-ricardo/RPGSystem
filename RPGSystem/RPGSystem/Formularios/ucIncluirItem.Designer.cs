@@ -46,7 +46,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(22, 32);
+            this.lblNome.Location = new System.Drawing.Point(22, 64);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(41, 16);
             this.lblNome.TabIndex = 0;
@@ -55,7 +55,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(22, 95);
+            this.lblTipo.Location = new System.Drawing.Point(22, 149);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(51, 16);
             this.lblTipo.TabIndex = 1;
@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 175);
+            this.label1.Location = new System.Drawing.Point(22, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 2;
@@ -73,7 +73,7 @@
             // lblAtaque
             // 
             this.lblAtaque.AutoSize = true;
-            this.lblAtaque.Location = new System.Drawing.Point(29, 263);
+            this.lblAtaque.Location = new System.Drawing.Point(22, 337);
             this.lblAtaque.Name = "lblAtaque";
             this.lblAtaque.Size = new System.Drawing.Size(48, 16);
             this.lblAtaque.TabIndex = 3;
@@ -82,9 +82,9 @@
             // btnIncluir
             // 
             this.btnIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnIncluir.Location = new System.Drawing.Point(3, 404);
+            this.btnIncluir.Location = new System.Drawing.Point(3, 431);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(87, 29);
+            this.btnIncluir.Size = new System.Drawing.Size(75, 23);
             this.btnIncluir.TabIndex = 4;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.Location = new System.Drawing.Point(96, 404);
+            this.btnCancelar.Location = new System.Drawing.Point(84, 431);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -103,33 +103,33 @@
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(84, 29);
+            this.tbNome.Location = new System.Drawing.Point(84, 61);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(238, 23);
+            this.tbNome.Size = new System.Drawing.Size(289, 23);
             this.tbNome.TabIndex = 0;
             // 
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(84, 92);
+            this.cbxTipo.Location = new System.Drawing.Point(84, 146);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(238, 24);
+            this.cbxTipo.Size = new System.Drawing.Size(289, 24);
             this.cbxTipo.TabIndex = 1;
             this.ttEspecie.SetToolTip(this.cbxTipo, "Especie que pode usar o item.\r\n");
             // 
             // tckRange
             // 
             this.tckRange.LargeChange = 2;
-            this.tckRange.Location = new System.Drawing.Point(84, 175);
+            this.tckRange.Location = new System.Drawing.Point(84, 240);
             this.tckRange.Name = "tckRange";
-            this.tckRange.Size = new System.Drawing.Size(238, 45);
+            this.tckRange.Size = new System.Drawing.Size(289, 45);
             this.tckRange.TabIndex = 2;
             // 
             // tbAtaque
             // 
-            this.tbAtaque.Location = new System.Drawing.Point(83, 260);
+            this.tbAtaque.Location = new System.Drawing.Point(84, 334);
             this.tbAtaque.Name = "tbAtaque";
-            this.tbAtaque.Size = new System.Drawing.Size(239, 23);
+            this.tbAtaque.Size = new System.Drawing.Size(290, 23);
             this.tbAtaque.TabIndex = 3;
             // 
             // ucIncluirItem
@@ -148,7 +148,7 @@
             this.Controls.Add(this.lblNome);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucIncluirItem";
-            this.Size = new System.Drawing.Size(576, 436);
+            this.Size = new System.Drawing.Size(424, 459);
             ((System.ComponentModel.ISupportInitialize)(this.tckRange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

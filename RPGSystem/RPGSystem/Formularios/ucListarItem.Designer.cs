@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.scListarItens = new System.Windows.Forms.SplitContainer();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -49,18 +48,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tckRange)).BeginInit();
             this.SuspendLayout();
             // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 491);
-            this.splitter1.TabIndex = 4;
-            this.splitter1.TabStop = false;
-            // 
             // scListarItens
             // 
+            this.scListarItens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.scListarItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scListarItens.Location = new System.Drawing.Point(3, 0);
+            this.scListarItens.Location = new System.Drawing.Point(0, 0);
             this.scListarItens.Name = "scListarItens";
             // 
             // scListarItens.Panel1
@@ -82,9 +74,10 @@
             this.scListarItens.Panel2.Controls.Add(this.label1);
             this.scListarItens.Panel2.Controls.Add(this.lblTipo);
             this.scListarItens.Panel2.Controls.Add(this.lblNome);
-            this.scListarItens.Size = new System.Drawing.Size(859, 491);
-            this.scListarItens.SplitterDistance = 388;
-            this.scListarItens.TabIndex = 5;
+            this.scListarItens.Size = new System.Drawing.Size(858, 459);
+            this.scListarItens.SplitterDistance = 424;
+            this.scListarItens.SplitterWidth = 2;
+            this.scListarItens.TabIndex = 2;
             // 
             // dgvLista
             // 
@@ -99,16 +92,16 @@
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(388, 371);
+            this.dgvLista.Size = new System.Drawing.Size(422, 371);
             this.dgvLista.TabIndex = 8;
             this.dgvLista.DoubleClick += new System.EventHandler(this.dgvLista_DoubleClick);
             // 
             // btnExcluir
             // 
             this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExcluir.Location = new System.Drawing.Point(195, 463);
+            this.btnExcluir.Location = new System.Drawing.Point(165, 431);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(87, 25);
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -117,9 +110,9 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReload.Location = new System.Drawing.Point(101, 463);
+            this.btnReload.Location = new System.Drawing.Point(84, 431);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(87, 25);
+            this.btnReload.Size = new System.Drawing.Size(75, 23);
             this.btnReload.TabIndex = 6;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -128,9 +121,9 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditar.Location = new System.Drawing.Point(6, 463);
+            this.btnEditar.Location = new System.Drawing.Point(3, 431);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(87, 25);
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -138,7 +131,7 @@
             // 
             // tbAtaque
             // 
-            this.tbAtaque.Location = new System.Drawing.Point(79, 247);
+            this.tbAtaque.Location = new System.Drawing.Point(79, 282);
             this.tbAtaque.Name = "tbAtaque";
             this.tbAtaque.Size = new System.Drawing.Size(239, 22);
             this.tbAtaque.TabIndex = 12;
@@ -146,7 +139,7 @@
             // tckRange
             // 
             this.tckRange.LargeChange = 2;
-            this.tckRange.Location = new System.Drawing.Point(80, 162);
+            this.tckRange.Location = new System.Drawing.Point(79, 178);
             this.tckRange.Name = "tckRange";
             this.tckRange.Size = new System.Drawing.Size(238, 45);
             this.tckRange.TabIndex = 10;
@@ -154,7 +147,7 @@
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(80, 79);
+            this.cbxTipo.Location = new System.Drawing.Point(79, 101);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(238, 22);
             this.cbxTipo.TabIndex = 8;
@@ -162,7 +155,7 @@
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(80, 16);
+            this.tbNome.Location = new System.Drawing.Point(79, 25);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(238, 22);
             this.tbNome.TabIndex = 6;
@@ -170,9 +163,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(379, 459);
+            this.btnCancelar.Location = new System.Drawing.Point(353, 432);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -181,9 +174,9 @@
             // btnIncluir
             // 
             this.btnIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIncluir.Location = new System.Drawing.Point(286, 459);
+            this.btnIncluir.Location = new System.Drawing.Point(275, 432);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(87, 29);
+            this.btnIncluir.Size = new System.Drawing.Size(75, 23);
             this.btnIncluir.TabIndex = 14;
             this.btnIncluir.Text = "Salvar";
             this.btnIncluir.UseVisualStyleBackColor = true;
@@ -192,7 +185,7 @@
             // lblAtaque
             // 
             this.lblAtaque.AutoSize = true;
-            this.lblAtaque.Location = new System.Drawing.Point(25, 250);
+            this.lblAtaque.Location = new System.Drawing.Point(10, 262);
             this.lblAtaque.Name = "lblAtaque";
             this.lblAtaque.Size = new System.Drawing.Size(47, 14);
             this.lblAtaque.TabIndex = 13;
@@ -201,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 162);
+            this.label1.Location = new System.Drawing.Point(11, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 14);
             this.label1.TabIndex = 11;
@@ -210,7 +203,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(18, 82);
+            this.lblTipo.Location = new System.Drawing.Point(11, 104);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(48, 14);
             this.lblTipo.TabIndex = 9;
@@ -219,7 +212,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(18, 19);
+            this.lblNome.Location = new System.Drawing.Point(11, 31);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(39, 14);
             this.lblNome.TabIndex = 7;
@@ -230,10 +223,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.scListarItens);
-            this.Controls.Add(this.splitter1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ucListarItem";
-            this.Size = new System.Drawing.Size(862, 491);
+            this.Size = new System.Drawing.Size(858, 459);
             this.scListarItens.Panel1.ResumeLayout(false);
             this.scListarItens.Panel2.ResumeLayout(false);
             this.scListarItens.Panel2.PerformLayout();
@@ -246,7 +238,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.SplitContainer scListarItens;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnReload;
