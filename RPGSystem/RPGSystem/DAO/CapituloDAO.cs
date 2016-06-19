@@ -7,6 +7,8 @@ using RPGSystem.Entidades;
 
 namespace RPGSystem.DAO {
     class CapituloDAO : IDAO {
+        DBAcces db = new DBAcces();
+
         public void Alterar(IEntidades obj, int id) {
             if (!(obj is Capitulo))
                 throw new InvalidCastException("Objeto não é um atributo");

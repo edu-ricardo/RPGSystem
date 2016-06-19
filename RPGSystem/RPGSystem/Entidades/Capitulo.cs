@@ -9,6 +9,7 @@ namespace RPGSystem.Entidades {
         public int idCapitulo { get; set; }
         public string Titulo { get; set; }
         public string Texto { get; set; }
+        public Boolean startChapter { get; set; }
         public List<Item> Items { get; set; }
         public List<Viloes> Viloes { get; set; }
 
