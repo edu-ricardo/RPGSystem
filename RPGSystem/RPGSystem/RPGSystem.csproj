@@ -120,6 +120,12 @@
     <Compile Include="Formularios\ucIncluirAtributo.Designer.cs">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucIncluirCapitulo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirCapitulo.Designer.cs">
+      <DependentUpon>ucIncluirCapitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ucIncluirEspecies.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucIncluirCapitulo.resx">
+      <DependentUpon>ucIncluirCapitulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirEspecies.resx">
       <DependentUpon>ucIncluirEspecies.cs</DependentUpon>
