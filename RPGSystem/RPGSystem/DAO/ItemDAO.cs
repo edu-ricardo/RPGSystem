@@ -41,8 +41,8 @@ namespace RPGSystem.DAO {
 
             Item item = (obj as Item);
 
-            string sql = "INSERT INTO Item (tipo, nome, descricao) " +
-                         "VALUES(@tipo, @nome, @descricao)";
+            string sql = "INSERT INTO Item (tipo, nome, range, attack, @tipo) " +
+                         "VALUES(@tipo, @nome, @range)";
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();

@@ -67,6 +67,7 @@
             this.btnReload.TabIndex = 2;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnExcluir
             // 
