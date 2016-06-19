@@ -9,7 +9,7 @@ namespace RPGSystem.Entidades{
     class Viloes : IEntidades    {
                 
         public int IdVilao { get; set; }
-        public string Especie { get; set; } // S: String | I: Integer
+        public int idEspecie { get; set; } 
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public int Ataque { get; set; }
@@ -19,8 +19,8 @@ namespace RPGSystem.Entidades{
             this.IdVilao = int.MaxValue;
         }
 
-        public Viloes(string AEspecie, string ANome, string ADescricao, int AAtaque, int ADefesa) {
-            this.Especie = AEspecie;
+        public Viloes(int AIdEspecie, string ANome, string ADescricao, int AAtaque, int ADefesa) {
+            this.idEspecie = AIdEspecie;
             this.Nome = ANome;
             this.Descricao = ADescricao;
             this.IdVilao = int.MaxValue;

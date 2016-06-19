@@ -9,7 +9,7 @@ namespace RPGSystem.Entidades {
     class Item : IEntidades {
         public int IdItem { get; set; }
 
-        public char Tipo { get; set; }
+        public int idEspecie { get; set; }
 
         public string Nome { get; set; }
 
@@ -21,11 +21,12 @@ namespace RPGSystem.Entidades {
             this.IdItem = int.MaxValue;
         }
 
-        public Item(String Tipo, String Nome, int Range, int Atack) {
+        public Item(String Nome, int Range, int Atack, int AIdEspecie) {
             this.IdItem = int.MaxValue;
             this.Nome = Nome;
             this.Range = Range;
             this.Atack = Atack;
+            this.idEspecie = AIdEspecie;
         }
 
         public void Excluir() {
@@ -45,7 +46,7 @@ namespace RPGSystem.Entidades {
         public void Salvar() {
             ItemDAO dao = new ItemDAO();
 
-            if (this.IdItem != int.MaxValue && dao.ListarItem().Exists(x => x.IdItem == this.IdItem)) { // Exit.(se esse ID é diferente do proximo da lista; x
+            if (this.IdItem != int.MaxValue && dao.ListarItem().Exists(x => x.IdItem == this.IdItem)) { 
                 dao.Alterar(this, this.IdItem); // na tela, colocar confirmação
             }
             else {

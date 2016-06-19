@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAtaque = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.tckRange = new System.Windows.Forms.TrackBar();
-            this.txtAtaque = new System.Windows.Forms.TextBox();
+            this.tbAtaque = new System.Windows.Forms.TextBox();
+            this.ttEspecie = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tckRange)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +57,9 @@
             this.lblTipo.AutoSize = true;
             this.lblTipo.Location = new System.Drawing.Point(22, 95);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(33, 16);
+            this.lblTipo.Size = new System.Drawing.Size(51, 16);
             this.lblTipo.TabIndex = 1;
-            this.lblTipo.Text = "Tipo";
+            this.lblTipo.Text = "Especie";
             // 
             // label1
             // 
@@ -77,69 +79,75 @@
             this.lblAtaque.TabIndex = 3;
             this.lblAtaque.Text = "Ataque";
             // 
-            // button1
+            // btnIncluir
             // 
-            this.button1.Location = new System.Drawing.Point(51, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Incluir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnIncluir.Location = new System.Drawing.Point(3, 404);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(87, 29);
+            this.btnIncluir.TabIndex = 4;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(174, 393);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelar.Location = new System.Drawing.Point(96, 404);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(87, 29);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtNome
+            // tbNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(84, 32);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(116, 23);
-            this.txtNome.TabIndex = 6;
+            this.tbNome.Location = new System.Drawing.Point(84, 29);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(238, 23);
+            this.tbNome.TabIndex = 0;
             // 
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(84, 95);
+            this.cbxTipo.Location = new System.Drawing.Point(84, 92);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(140, 24);
-            this.cbxTipo.TabIndex = 7;
+            this.cbxTipo.Size = new System.Drawing.Size(238, 24);
+            this.cbxTipo.TabIndex = 1;
+            this.ttEspecie.SetToolTip(this.cbxTipo, "Especie que pode usar o item.\r\n");
             // 
             // tckRange
             // 
+            this.tckRange.LargeChange = 2;
             this.tckRange.Location = new System.Drawing.Point(84, 175);
             this.tckRange.Name = "tckRange";
-            this.tckRange.Size = new System.Drawing.Size(121, 45);
-            this.tckRange.TabIndex = 8;
+            this.tckRange.Size = new System.Drawing.Size(238, 45);
+            this.tckRange.TabIndex = 2;
             // 
-            // txtAtaque
+            // tbAtaque
             // 
-            this.txtAtaque.Location = new System.Drawing.Point(84, 256);
-            this.txtAtaque.Name = "txtAtaque";
-            this.txtAtaque.Size = new System.Drawing.Size(116, 23);
-            this.txtAtaque.TabIndex = 9;
+            this.tbAtaque.Location = new System.Drawing.Point(83, 260);
+            this.tbAtaque.Name = "tbAtaque";
+            this.tbAtaque.Size = new System.Drawing.Size(239, 23);
+            this.tbAtaque.TabIndex = 3;
             // 
-            // ucInculirItem
+            // ucIncluirItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtAtaque);
+            this.Controls.Add(this.tbAtaque);
             this.Controls.Add(this.tckRange);
             this.Controls.Add(this.cbxTipo);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.tbNome);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.lblAtaque);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblNome);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "ucInculirItem";
+            this.Name = "ucIncluirItem";
             this.Size = new System.Drawing.Size(576, 436);
             ((System.ComponentModel.ISupportInitialize)(this.tckRange)).EndInit();
             this.ResumeLayout(false);
@@ -153,11 +161,12 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAtaque;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.TrackBar tckRange;
-        private System.Windows.Forms.TextBox txtAtaque;
+        private System.Windows.Forms.TextBox tbAtaque;
+        private System.Windows.Forms.ToolTip ttEspecie;
     }
 }

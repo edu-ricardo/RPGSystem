@@ -51,6 +51,8 @@ namespace RPGSystem.Formularios {
                 tpIncluirAttributo.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }            
             tcMestre.TabPages.Add(tpIncluirAttributo);
+
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
 
         private void tcMestre_DoubleClick(object sender, EventArgs e) {
@@ -69,6 +71,7 @@ namespace RPGSystem.Formularios {
                 tpListAttributo.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }
             tcMestre.TabPages.Add(tpListAttributo);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
 
         private void incluirToolStripMenuItem1_Click(object sender, EventArgs e) {
@@ -83,6 +86,7 @@ namespace RPGSystem.Formularios {
                 tpIncluirItem.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }
             tcMestre.TabPages.Add(tpIncluirItem);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
 
         private void incluirToolStripMenuItem2_Click(object sender, EventArgs e) {
@@ -97,6 +101,7 @@ namespace RPGSystem.Formularios {
                 tpIncluirViloes.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }
             tcMestre.TabPages.Add(tpIncluirViloes);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -111,7 +116,52 @@ namespace RPGSystem.Formularios {
                 tpAlterarViloes.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
             }
             tcMestre.TabPages.Add(tpAlterarViloes);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
+        }
 
+        private void incluirToolStripMenuItem4_Click(object sender, EventArgs e) {
+            TabPage tpIncluirEspecies = new TabPage("Incluir Especies");
+            ucIncluirEspecies TelaIncEsp = new ucIncluirEspecies();
+            TelaIncEsp.Parent = this;
+            TelaIncEsp.Dock = DockStyle.Fill;
+            tpIncluirEspecies.Controls.Add(TelaIncEsp);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpIncluirEspecies.AutoScroll = true;
+                tpIncluirEspecies.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpIncluirEspecies.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpIncluirEspecies);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
+        }
+
+        private void alterarToolStripMenuItem2_Click(object sender, EventArgs e) {
+            TabPage tpListarEspecies = new TabPage("Listar/Alterar Especies");
+            ucListarEspecies TelaListEsp = new ucListarEspecies();
+            TelaListEsp.Parent = this;
+            TelaListEsp.Dock = DockStyle.Fill;
+            tpListarEspecies.Controls.Add(TelaListEsp);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpListarEspecies.AutoScroll = true;
+                tpListarEspecies.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpListarEspecies.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpListarEspecies);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
+        }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e) {
+            TabPage tpListarItens = new TabPage("Listar/Alterar Itens");
+            ucListarItem TelaListItem = new ucListarItem();
+            TelaListItem.Parent = this;
+            TelaListItem.Dock = DockStyle.Fill;
+            tpListarItens.Controls.Add(TelaListItem);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpListarItens.AutoScroll = true;
+                tpListarItens.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpListarItens.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpListarItens);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
     }
 }

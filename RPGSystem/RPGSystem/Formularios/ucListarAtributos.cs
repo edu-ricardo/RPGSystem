@@ -88,13 +88,9 @@ namespace RPGSystem.Formularios {
             attr.Descricao = tbDescricao.Text;
             try {
                 attr.Salvar();
-                if (MessageBox.Show("Salvo com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes) {
-                    ReloadForm();
-                }
-                else {
-                    ReloadForm();
-                    btnCancelar.PerformClick();
-                }
+                MessageBox.Show("Salvo com Sucesso!!");
+                ReloadForm();
+                btnCancelar.PerformClick();
             }
             catch (Exception ex) {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);

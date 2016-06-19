@@ -16,18 +16,18 @@ namespace RPGSystem.DAO {
 
             Item item = (obj as Item);
 
-            string sql = "UPDATE Item set tipo = @tipo, nome = @nome, range = @range, attack = @attack " +
-                         "WHERE idAtributo = @id";
+            string sql = "UPDATE Item set idEspecie = @idEspecie, nome = @nome, range = @range, attack = @attack " +
+                         "WHERE idItem = @id";
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
             ParamsName.Add("@id");
-            ParamsName.Add("@tipo");
+            ParamsName.Add("@idEspecie");
             ParamsName.Add("@nome");
             ParamsName.Add("@range");
             ParamsName.Add("@attack");
             Params.Add(id);
-            Params.Add(item.Tipo);
+            Params.Add(item.idEspecie);
             Params.Add(item.Nome);
             Params.Add(item.Range);
             Params.Add(item.Atack);
@@ -41,17 +41,17 @@ namespace RPGSystem.DAO {
 
             Item item = (obj as Item);
 
-            string sql = "INSERT INTO Item (tipo, nome, descricao) " +
-                         "VALUES(@tipo, @nome, @descricao)";
+            string sql = "INSERT INTO Item (idEspecie, nome, range, attack) " +
+                         "VALUES(@idEspecie, @nome, @range, @attack)";
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
             
-            ParamsName.Add("@tipo");
+            ParamsName.Add("@idEspecie");
             ParamsName.Add("@nome");
             ParamsName.Add("@range");
             ParamsName.Add("@attack");            
-            Params.Add(item.Tipo);
+            Params.Add(item.idEspecie);
             Params.Add(item.Nome);
             Params.Add(item.Range);
             Params.Add(item.Atack);
@@ -60,7 +60,7 @@ namespace RPGSystem.DAO {
         }
 
         public void Excluir(int id) {
-            string sql = "DELETE FROM Item WHERE idAtributo = @id";
+            string sql = "DELETE FROM Item WHERE idItem = @id";
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
             ParamsName.Add("@id");
@@ -76,9 +76,10 @@ namespace RPGSystem.DAO {
             List<IEntidades> ItemLst = new List<IEntidades>();
 
             while (Reader.Read()) {
-                Item item = new Item(Convert.ToString(Reader["tipo"]), Convert.ToString(Reader["nome"]),
-                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["atack"]));
-                item.IdItem = Convert.ToInt32(Reader["idAtributo"]);
+                
+                Item item = new Item(Convert.ToString(Reader["nome"]), 
+                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["atack"]), Convert.ToInt32(Reader["idEspecie"]));               
+                item.IdItem = Convert.ToInt32(Reader["idItem"]);
                 ItemLst.Add(item);
             }
 
@@ -92,9 +93,9 @@ namespace RPGSystem.DAO {
             List<Item> ItemLst = new List<Item>();
 
             while (Reader.Read()) {
-                Item item = new Item(Convert.ToString(Reader["tipo"]), Convert.ToString(Reader["nome"]),
-                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["atack"]));
-                item.IdItem = Convert.ToInt32(Reader["idAtributo"]);
+                Item item = new Item(Convert.ToString(Reader["nome"]),
+                    Convert.ToInt32(Reader["range"]), Convert.ToInt32(Reader["attack"]), Convert.ToInt32(Reader["idEspecie"]));
+                item.IdItem = Convert.ToInt32(Reader["idItem"]);
                 ItemLst.Add(item);
             }
 
