@@ -17,13 +17,13 @@ namespace RPGSystem.DAO {
 
             SqlCommand Command = new SqlCommand();
             Command.Connection = Conexao;
-            Command.CommandText = Query + ";SELECT SCOPE_IDENTITY();";
+            Command.CommandText = Query + "; SELECT SCOPE_IDENTITY();";
 
             // Adiciona parametros
             for (int i = 0; i < Parameters.Count; i++) {
                 Command.Parameters.AddWithValue(ParamsName[i], Parameters[i]);
             }
-            int mod = Command.ExecuteNonQuery();
+            int mod = Convert.ToInt32(Command.ExecuteScalar());
             return mod;
         }
 
