@@ -30,13 +30,12 @@ namespace RPGSystem.Formularios
             scListarViloes.Panel2Collapsed = true;
 
 
-            List<Especie> DataCbx = new List<Especie>();
-            DataCbx.Add(new Especie('I', "Integer"));
-            DataCbx.Add(new Especie('S', "String"));
+            List<Especie> DataCbx = Especie.ListarTodas();
+            
 
             cbxEspecie.DataSource = DataCbx;
-            cbxEspecie.DisplayMember = "Desc";
-            cbxEspecie.ValueMember = "Id";
+            cbxEspecie.DisplayMember = "nome";
+            cbxEspecie.ValueMember = "idEspecie";
             cbxEspecie.SelectedIndex = 0;
         }
 
@@ -59,7 +58,7 @@ namespace RPGSystem.Formularios
                 for (int i = 0; i < cbxEspecie.Items.Count; i++)
                 {
                     cbxEspecie.SelectedIndex = i;
-                    if (Convert.ToString(cbxEspecie.SelectedValue) == aux.Especie)
+                    if (Convert.ToInt32(cbxEspecie.SelectedValue) == aux.idEspecie)
                     {
                         found = true;
                         break;
@@ -83,17 +82,7 @@ namespace RPGSystem.Formularios
 
         }
 
-        public class Especie
-        {
-            public char Id { get; set; }
-            public string Desc { get; set; }
 
-            public Especie(char Aid, string Adesc)
-            {
-                this.Id = Aid;
-                this.Desc = Adesc;
-            }
-        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -134,7 +123,7 @@ namespace RPGSystem.Formularios
         {
             Viloes evil = new Viloes();
             evil.IdVilao = idAlteracao;
-            evil.Especie = cbxEspecie.Text;
+            evil.idEspecie = Convert.ToInt32(cbxEspecie.SelectedValue);
             evil.Nome = tbNome.Text;
             evil.Descricao = tbDescricao.Text;
             evil.Ataque = Convert.ToInt32(tbAtaque.Text);

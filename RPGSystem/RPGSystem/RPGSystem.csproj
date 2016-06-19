@@ -76,6 +76,7 @@
     <Compile Include="DAO\AtributoDAO.cs" />
     <Compile Include="DAO\CapituloDAO.cs" />
     <Compile Include="DAO\DBAcces.cs" />
+    <Compile Include="DAO\EspecieDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\ItemDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
@@ -119,6 +120,12 @@
     <Compile Include="Formularios\ucIncluirAtributo.Designer.cs">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucIncluirEspecies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirEspecies.Designer.cs">
+      <DependentUpon>ucIncluirEspecies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ucIncluirItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +155,12 @@
     </Compile>
     <Compile Include="Formularios\ucListarAtributos.Designer.cs">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ucListarEspecies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucListarEspecies.Designer.cs">
+      <DependentUpon>ucListarEspecies.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ucListarItem.cs">
       <SubType>UserControl</SubType>
@@ -189,6 +202,9 @@
     <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucIncluirEspecies.resx">
+      <DependentUpon>ucIncluirEspecies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirItem.resx">
       <DependentUpon>ucIncluirItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarAtributos.resx">
       <DependentUpon>ucListarAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucListarEspecies.resx">
+      <DependentUpon>ucListarEspecies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarItem.resx">
       <DependentUpon>ucListarItem.cs</DependentUpon>

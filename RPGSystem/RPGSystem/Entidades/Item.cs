@@ -9,7 +9,7 @@ namespace RPGSystem.Entidades {
     class Item : IEntidades {
         public int IdItem { get; set; }
 
-        public char Tipo { get; set; }
+        public int idEspecie { get; set; }
 
         public string Nome { get; set; }
 
@@ -21,11 +21,12 @@ namespace RPGSystem.Entidades {
             this.IdItem = int.MaxValue;
         }
 
-        public Item(String Tipo, String Nome, int Range, int Atack) {
+        public Item(String Nome, int Range, int Atack, int AIdEspecie) {
             this.IdItem = int.MaxValue;
             this.Nome = Nome;
             this.Range = Range;
             this.Atack = Atack;
+            this.idEspecie = AIdEspecie;
         }
 
         public void Excluir() {

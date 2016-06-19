@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [RPGSystem]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Database [RPGSystem]    Script Date: 6/18/2016 9:28:36 PM ******/
 CREATE DATABASE [RPGSystem]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -77,7 +77,7 @@ EXEC sys.sp_db_vardecimal_storage_format N'RPGSystem', N'ON'
 GO
 USE [RPGSystem]
 GO
-/****** Object:  Table [dbo].[Atributo]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Atributo]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,18 +98,18 @@ CREATE TABLE [dbo].[Atributo](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Atributo_Historia]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Atributo_Historia]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Atributo_Historia](
-	[idAtributo] [int] NOT NULL,
-	[idHistoria] [int] NOT NULL
+	[idHistoria] [int] NOT NULL,
+	[idAtributo] [int] NOT NULL
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Atributo_Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Atributo_Personagem]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -126,13 +126,13 @@ CREATE TABLE [dbo].[Atributo_Personagem](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Caminho]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Caminho]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Caminho](
-	[idCaminho] [int] NOT NULL,
+	[idCaminho] [int] IDENTITY(1,1) NOT NULL,
 	[idHistoriaOrigem] [int] NOT NULL,
 	[idHistoriaDestino] [int] NOT NULL,
 	[idCondicao] [int] NOT NULL,
@@ -143,13 +143,35 @@ CREATE TABLE [dbo].[Caminho](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Condicao]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Capitulo]    Script Date: 6/18/2016 9:28:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Capitulo](
+	[idCapitulo] [int] IDENTITY(1,1) NOT NULL,
+	[Texto] [text] NOT NULL,
+	[titulo] [varchar](255) NULL,
+	[startChapter] [bit] NOT NULL,
+	[idHistoria] [int] NOT NULL,
+ CONSTRAINT [PK_CAPITULO] PRIMARY KEY CLUSTERED 
+(
+	[idCapitulo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Condicao]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Condicao](
-	[idCondicao] [int] NOT NULL,
+	[idCondicao] [int] IDENTITY(1,1) NOT NULL,
 	[idTipoCondicao] [int] NOT NULL,
  CONSTRAINT [PK_CONDICAO] PRIMARY KEY CLUSTERED 
 (
@@ -158,7 +180,27 @@ CREATE TABLE [dbo].[Condicao](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Historia]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Especie]    Script Date: 6/18/2016 9:28:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Especie](
+	[idEspecie] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[descricao] [varchar](255) NULL,
+ CONSTRAINT [PK_ESPECIE] PRIMARY KEY CLUSTERED 
+(
+	[idEspecie] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Historia]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -166,21 +208,19 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Historia](
-	[idHistoria] [int] NOT NULL,
-	[historia] [text] NOT NULL,
-	[titulo] [varchar](255) NULL,
-	[capitulo] [varchar](255) NULL,
-	[startChapter] [bit] NOT NULL,
+	[idHistoria] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](255) NOT NULL,
+	[idCriador] [int] NOT NULL,
  CONSTRAINT [PK_HISTORIA] PRIMARY KEY CLUSTERED 
 (
 	[idHistoria] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Item]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Item]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -188,9 +228,11 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Item](
-	[idItem] [int] NOT NULL,
+	[idItem] [int] IDENTITY(1,1) NOT NULL,
 	[nome] [varchar](1) NOT NULL,
-	[statAtaque] [int] NULL,
+	[attack] [int] NULL,
+	[range] [bigint] NULL,
+	[idEspecie] [int] NULL,
  CONSTRAINT [PK_ITEM] PRIMARY KEY CLUSTERED 
 (
 	[idItem] ASC
@@ -200,18 +242,18 @@ CREATE TABLE [dbo].[Item](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Item_Historia]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Item_Capitulo]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Item_Historia](
-	[idHistoria] [int] NOT NULL,
+CREATE TABLE [dbo].[Item_Capitulo](
+	[idCapitulo] [int] NOT NULL,
 	[idItem] [int] NOT NULL
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Item_Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Item_Personagem]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -222,7 +264,7 @@ CREATE TABLE [dbo].[Item_Personagem](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Login]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Login]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,8 +275,8 @@ CREATE TABLE [dbo].[Login](
 	[idLogin] [int] IDENTITY(1,1) NOT NULL,
 	[login] [varchar](100) NOT NULL,
 	[senha] [varchar](255) NOT NULL,
-	[nivel] [char](1) NULL CONSTRAINT [DF__Login__nivel__4D94879B]  DEFAULT ('U'),
-	[email] [varchar](50) NOT NULL,
+	[nivel] [char](1) NULL,
+	[email] [varchar](50) NULL,
  CONSTRAINT [PK_LOGIN] PRIMARY KEY CLUSTERED 
 (
 	[idLogin] ASC
@@ -244,7 +286,7 @@ CREATE TABLE [dbo].[Login](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Login_Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Login_Personagem]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -260,7 +302,7 @@ CREATE TABLE [dbo].[Login_Personagem](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Personagem]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[Personagem]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,19 +310,35 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Personagem](
-	[idPersonagem] [int] NOT NULL,
+	[idPersonagem] [int] IDENTITY(1,1) NOT NULL,
 	[nome] [varchar](100) NOT NULL,
-	[idHistoria] [int] NOT NULL,
+	[imagem] [image] NULL,
  CONSTRAINT [PK_PERSONAGEM] PRIMARY KEY CLUSTERED 
 (
 	[idPersonagem] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Saves]    Script Date: 6/18/2016 9:28:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Saves](
+	[idPersonagem] [int] NOT NULL,
+	[idHistoria] [int] NOT NULL,
+	[nome] [varchar](255) NOT NULL
 ) ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[TipoCondicao]    Script Date: 6/13/2016 7:52:08 PM ******/
+/****** Object:  Table [dbo].[TipoCondicao]    Script Date: 6/18/2016 9:28:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -300,16 +358,52 @@ CREATE TABLE [dbo].[TipoCondicao](
 GO
 SET ANSI_PADDING OFF
 GO
-ALTER TABLE [dbo].[Historia] ADD  DEFAULT ('0') FOR [startChapter]
+/****** Object:  Table [dbo].[Vilao]    Script Date: 6/18/2016 9:28:36 PM ******/
+SET ANSI_NULLS ON
 GO
-ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk0] FOREIGN KEY([idAtributo])
-REFERENCES [dbo].[Atributo] ([idAtributo])
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Vilao](
+	[idVilao] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[descricao] [varchar](255) NULL,
+	[ataque] [int] NOT NULL,
+	[defesa] [int] NOT NULL,
+	[idEspecie] [int] NOT NULL,
+ CONSTRAINT [PK_VILAO] PRIMARY KEY CLUSTERED 
+(
+	[idVilao] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Vilao_Capitulo]    Script Date: 6/18/2016 9:28:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Vilao_Capitulo](
+	[idVilao] [int] NOT NULL,
+	[idCapitulo] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Capitulo] ADD  CONSTRAINT [DF__Capitulo__startC__15502E78]  DEFAULT ('0') FOR [startChapter]
+GO
+ALTER TABLE [dbo].[Login] ADD  CONSTRAINT [DF__Login__nivel__1DE57479]  DEFAULT ('U') FOR [nivel]
+GO
+ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk0] FOREIGN KEY([idHistoria])
+REFERENCES [dbo].[Historia] ([idHistoria])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk0]
 GO
-ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk1] FOREIGN KEY([idHistoria])
-REFERENCES [dbo].[Historia] ([idHistoria])
+ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk1] FOREIGN KEY([idAtributo])
+REFERENCES [dbo].[Atributo] ([idAtributo])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk1]
@@ -327,13 +421,13 @@ GO
 ALTER TABLE [dbo].[Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk1]
 GO
 ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk0] FOREIGN KEY([idHistoriaOrigem])
-REFERENCES [dbo].[Historia] ([idHistoria])
+REFERENCES [dbo].[Capitulo] ([idCapitulo])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk0]
 GO
 ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk1] FOREIGN KEY([idHistoriaDestino])
-REFERENCES [dbo].[Historia] ([idHistoria])
+REFERENCES [dbo].[Capitulo] ([idCapitulo])
 GO
 ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk1]
 GO
@@ -343,23 +437,41 @@ ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk2]
 GO
+ALTER TABLE [dbo].[Capitulo]  WITH CHECK ADD  CONSTRAINT [Capitulo_fk0] FOREIGN KEY([idHistoria])
+REFERENCES [dbo].[Historia] ([idHistoria])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[Capitulo] CHECK CONSTRAINT [Capitulo_fk0]
+GO
 ALTER TABLE [dbo].[Condicao]  WITH CHECK ADD  CONSTRAINT [Condicao_fk0] FOREIGN KEY([idTipoCondicao])
 REFERENCES [dbo].[TipoCondicao] ([idTipoCondicao])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[Condicao] CHECK CONSTRAINT [Condicao_fk0]
 GO
-ALTER TABLE [dbo].[Item_Historia]  WITH CHECK ADD  CONSTRAINT [Item_Historia_fk0] FOREIGN KEY([idHistoria])
-REFERENCES [dbo].[Historia] ([idHistoria])
+ALTER TABLE [dbo].[Historia]  WITH CHECK ADD  CONSTRAINT [Historia_fk0] FOREIGN KEY([idCriador])
+REFERENCES [dbo].[Login] ([idLogin])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [dbo].[Item_Historia] CHECK CONSTRAINT [Item_Historia_fk0]
+ALTER TABLE [dbo].[Historia] CHECK CONSTRAINT [Historia_fk0]
 GO
-ALTER TABLE [dbo].[Item_Historia]  WITH CHECK ADD  CONSTRAINT [Item_Historia_fk1] FOREIGN KEY([idItem])
+ALTER TABLE [dbo].[Item]  WITH CHECK ADD  CONSTRAINT [Item_fk0] FOREIGN KEY([idEspecie])
+REFERENCES [dbo].[Especie] ([idEspecie])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[Item] CHECK CONSTRAINT [Item_fk0]
+GO
+ALTER TABLE [dbo].[Item_Capitulo]  WITH CHECK ADD  CONSTRAINT [Item_Capitulo_fk0] FOREIGN KEY([idCapitulo])
+REFERENCES [dbo].[Capitulo] ([idCapitulo])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[Item_Capitulo] CHECK CONSTRAINT [Item_Capitulo_fk0]
+GO
+ALTER TABLE [dbo].[Item_Capitulo]  WITH CHECK ADD  CONSTRAINT [Item_Capitulo_fk1] FOREIGN KEY([idItem])
 REFERENCES [dbo].[Item] ([idItem])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [dbo].[Item_Historia] CHECK CONSTRAINT [Item_Historia_fk1]
+ALTER TABLE [dbo].[Item_Capitulo] CHECK CONSTRAINT [Item_Capitulo_fk1]
 GO
 ALTER TABLE [dbo].[Item_Personagem]  WITH CHECK ADD  CONSTRAINT [Item_Personagem_fk0] FOREIGN KEY([idItem])
 REFERENCES [dbo].[Item] ([idItem])
@@ -385,11 +497,23 @@ ON UPDATE CASCADE
 GO
 ALTER TABLE [dbo].[Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk1]
 GO
-ALTER TABLE [dbo].[Personagem]  WITH CHECK ADD  CONSTRAINT [Personagem_fk0] FOREIGN KEY([idHistoria])
-REFERENCES [dbo].[Historia] ([idHistoria])
+ALTER TABLE [dbo].[Vilao]  WITH CHECK ADD  CONSTRAINT [Vilao_fk0] FOREIGN KEY([idEspecie])
+REFERENCES [dbo].[Especie] ([idEspecie])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [dbo].[Personagem] CHECK CONSTRAINT [Personagem_fk0]
+ALTER TABLE [dbo].[Vilao] CHECK CONSTRAINT [Vilao_fk0]
+GO
+ALTER TABLE [dbo].[Vilao_Capitulo]  WITH CHECK ADD  CONSTRAINT [Vilao_Capitulo_fk0] FOREIGN KEY([idVilao])
+REFERENCES [dbo].[Vilao] ([idVilao])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[Vilao_Capitulo] CHECK CONSTRAINT [Vilao_Capitulo_fk0]
+GO
+ALTER TABLE [dbo].[Vilao_Capitulo]  WITH CHECK ADD  CONSTRAINT [Vilao_Capitulo_fk1] FOREIGN KEY([idCapitulo])
+REFERENCES [dbo].[Capitulo] ([idCapitulo])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [dbo].[Vilao_Capitulo] CHECK CONSTRAINT [Vilao_Capitulo_fk1]
 GO
 USE [master]
 GO

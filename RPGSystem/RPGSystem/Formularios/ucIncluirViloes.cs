@@ -17,26 +17,13 @@ namespace RPGSystem.Formularios
         {
             InitializeComponent();
 
-            List<Especie> DataCbx = new List<Especie>();
-            DataCbx.Add(new Especie('I', "Integer"));
-            DataCbx.Add(new Especie('S', "String"));
+            List<Especie> DataCbx = Especie.ListarTodas();
+
 
             cbxEspecie.DataSource = DataCbx;
-            cbxEspecie.DisplayMember = "Desc";
-            cbxEspecie.ValueMember = "Id";
+            cbxEspecie.DisplayMember = "nome";
+            cbxEspecie.ValueMember = "idEspecie";
             cbxEspecie.SelectedIndex = 0;
-        }
-
-        public class Especie
-        {
-            public char Id { get; set; }
-            public string Desc { get; set; }
-
-            public Especie(char Aid, string Adesc)
-            {
-                this.Id = Aid;
-                this.Desc = Adesc;
-            }
         }
 
         private void ReloadForm()
@@ -58,7 +45,7 @@ namespace RPGSystem.Formularios
         {
             Viloes evil = new Viloes();
 
-            evil.Especie = Convert.ToString(cbxEspecie.SelectedValue);
+            evil.idEspecie = Convert.ToInt32(cbxEspecie.SelectedValue);
             evil.Nome = tbNome.Text;
             evil.Descricao = tbDescricao.Text;
             try

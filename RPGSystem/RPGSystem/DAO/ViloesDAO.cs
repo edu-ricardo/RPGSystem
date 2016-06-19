@@ -17,19 +17,19 @@ namespace RPGSystem.DAO
 
             Viloes evil = (obj as Viloes);
 
-            string sql = "UPDATE Vilao set especie = @especie, nome = @nome, descricao = @descricao, ataque = @ataque, defesa = @defesa  " +
+            string sql = "UPDATE Vilao set idEspecie = @idEspecie, nome = @nome, descricao = @descricao, ataque = @ataque, defesa = @defesa  " +
                          "WHERE idVilao = @id";
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
             ParamsName.Add("@id");
-            ParamsName.Add("@especie");
+            ParamsName.Add("@idEspecie");
             ParamsName.Add("@nome");
             ParamsName.Add("@descricao");
             ParamsName.Add("@ataque");
             ParamsName.Add("@defesa");
             Params.Add(id);
-            Params.Add(evil.Especie);
+            Params.Add(evil.idEspecie);
             Params.Add(evil.Nome);
             Params.Add(evil.Descricao);
             Params.Add(evil.Ataque);
@@ -44,17 +44,17 @@ namespace RPGSystem.DAO
 
             Viloes evil = (obj as Viloes);
 
-            string sql = "INSERT INTO Vilao (especie ,nome ,descricao, ataque, defesa) " +
-                         "VALUES(@especie, @nome, @descricao, @ataque, @defesa)";
+            string sql = "INSERT INTO Vilao (idEspecie ,nome ,descricao, ataque, defesa) " +
+                         "VALUES(@idEspecie, @nome, @descricao, @ataque, @defesa)";
 
             List<object> Params = new List<object>();
             List<string> ParamsName = new List<string>();
-            ParamsName.Add("@especie");
+            ParamsName.Add("@idEspecie");
             ParamsName.Add("@nome");
             ParamsName.Add("@descricao");
             ParamsName.Add("@ataque");
             ParamsName.Add("@defesa");
-            Params.Add(evil.Especie);
+            Params.Add(evil.idEspecie);
             Params.Add(evil.Nome);
             Params.Add(evil.Descricao);
             Params.Add(evil.Ataque);
@@ -79,7 +79,7 @@ namespace RPGSystem.DAO
             List<IEntidades> evilLst = new List<IEntidades>();
 
             while (Reader.Read()) {
-                evilLst.Add(new Viloes(Convert.ToString(Reader["especie"]), Convert.ToString(Reader["nome"]), Convert.ToString(Reader["descricao"]), Convert.ToInt32(Reader["ataque"]), Convert.ToInt32(Reader["defesa"])));
+                evilLst.Add(new Viloes(Convert.ToInt32(Reader["idEspecie"]), Convert.ToString(Reader["nome"]), Convert.ToString(Reader["descricao"]), Convert.ToInt32(Reader["ataque"]), Convert.ToInt32(Reader["defesa"])));
             }
 
             return evilLst;
@@ -92,7 +92,7 @@ namespace RPGSystem.DAO
             List<Viloes> EvilLst = new List<Viloes>();
 
             while (Reader.Read()) {
-                Viloes EvilAux = new Viloes(Convert.ToString(Reader["especie"]), Convert.ToString(Reader["nome"]), Convert.ToString(Reader["descricao"]), Convert.ToInt32(Reader["ataque"]), Convert.ToInt32(Reader["defesa"]));
+                Viloes EvilAux = new Viloes(Convert.ToInt32(Reader["idEspecie"]), Convert.ToString(Reader["nome"]), Convert.ToString(Reader["descricao"]), Convert.ToInt32(Reader["ataque"]), Convert.ToInt32(Reader["defesa"]));
                 EvilAux.IdVilao = Convert.ToInt32(Reader["idVilao"]);
                 EvilLst.Add(EvilAux);
             }
