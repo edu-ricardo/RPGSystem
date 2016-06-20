@@ -398,31 +398,36 @@ ALTER TABLE [dbo].[Login] ADD  CONSTRAINT [DF__Login__nivel__1DE57479]  DEFAULT 
 GO
 ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk0] FOREIGN KEY([idHistoria])
 REFERENCES [dbo].[Historia] ([idHistoria])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk0]
 GO
 ALTER TABLE [dbo].[Atributo_Historia]  WITH CHECK ADD  CONSTRAINT [Atributo_Historia_fk1] FOREIGN KEY([idAtributo])
 REFERENCES [dbo].[Atributo] ([idAtributo])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Atributo_Historia] CHECK CONSTRAINT [Atributo_Historia_fk1]
 GO
 ALTER TABLE [dbo].[Atributo_Personagem]  WITH CHECK ADD  CONSTRAINT [Atributo_Personagem_fk0] FOREIGN KEY([idPersonagem])
 REFERENCES [dbo].[Personagem] ([idPersonagem])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk0]
 GO
 ALTER TABLE [dbo].[Atributo_Personagem]  WITH CHECK ADD  CONSTRAINT [Atributo_Personagem_fk1] FOREIGN KEY([idAtributo])
 REFERENCES [dbo].[Atributo] ([idAtributo])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Atributo_Personagem] CHECK CONSTRAINT [Atributo_Personagem_fk1]
 GO
 ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk0] FOREIGN KEY([idHistoriaOrigem])
 REFERENCES [dbo].[Capitulo] ([idCapitulo])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk0]
 GO
@@ -433,85 +438,99 @@ ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk1]
 GO
 ALTER TABLE [dbo].[Caminho]  WITH CHECK ADD  CONSTRAINT [Caminho_fk2] FOREIGN KEY([idCondicao])
 REFERENCES [dbo].[Condicao] ([idCondicao])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Caminho] CHECK CONSTRAINT [Caminho_fk2]
 GO
 ALTER TABLE [dbo].[Capitulo]  WITH CHECK ADD  CONSTRAINT [Capitulo_fk0] FOREIGN KEY([idHistoria])
 REFERENCES [dbo].[Historia] ([idHistoria])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Capitulo] CHECK CONSTRAINT [Capitulo_fk0]
 GO
 ALTER TABLE [dbo].[Condicao]  WITH CHECK ADD  CONSTRAINT [Condicao_fk0] FOREIGN KEY([idTipoCondicao])
 REFERENCES [dbo].[TipoCondicao] ([idTipoCondicao])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Condicao] CHECK CONSTRAINT [Condicao_fk0]
 GO
 ALTER TABLE [dbo].[Historia]  WITH CHECK ADD  CONSTRAINT [Historia_fk0] FOREIGN KEY([idCriador])
 REFERENCES [dbo].[Login] ([idLogin])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Historia] CHECK CONSTRAINT [Historia_fk0]
 GO
 ALTER TABLE [dbo].[Item]  WITH CHECK ADD  CONSTRAINT [Item_fk0] FOREIGN KEY([idEspecie])
 REFERENCES [dbo].[Especie] ([idEspecie])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Item] CHECK CONSTRAINT [Item_fk0]
 GO
 ALTER TABLE [dbo].[Item_Capitulo]  WITH CHECK ADD  CONSTRAINT [Item_Capitulo_fk0] FOREIGN KEY([idCapitulo])
 REFERENCES [dbo].[Capitulo] ([idCapitulo])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Item_Capitulo] CHECK CONSTRAINT [Item_Capitulo_fk0]
 GO
 ALTER TABLE [dbo].[Item_Capitulo]  WITH CHECK ADD  CONSTRAINT [Item_Capitulo_fk1] FOREIGN KEY([idItem])
 REFERENCES [dbo].[Item] ([idItem])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Item_Capitulo] CHECK CONSTRAINT [Item_Capitulo_fk1]
 GO
 ALTER TABLE [dbo].[Item_Personagem]  WITH CHECK ADD  CONSTRAINT [Item_Personagem_fk0] FOREIGN KEY([idItem])
 REFERENCES [dbo].[Item] ([idItem])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Item_Personagem] CHECK CONSTRAINT [Item_Personagem_fk0]
 GO
 ALTER TABLE [dbo].[Item_Personagem]  WITH CHECK ADD  CONSTRAINT [Item_Personagem_fk1] FOREIGN KEY([idPersonagem])
 REFERENCES [dbo].[Personagem] ([idPersonagem])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Item_Personagem] CHECK CONSTRAINT [Item_Personagem_fk1]
 GO
 ALTER TABLE [dbo].[Login_Personagem]  WITH CHECK ADD  CONSTRAINT [Login_Personagem_fk0] FOREIGN KEY([idLogin])
 REFERENCES [dbo].[Login] ([idLogin])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk0]
 GO
 ALTER TABLE [dbo].[Login_Personagem]  WITH CHECK ADD  CONSTRAINT [Login_Personagem_fk1] FOREIGN KEY([idPersonagem])
 REFERENCES [dbo].[Personagem] ([idPersonagem])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Login_Personagem] CHECK CONSTRAINT [Login_Personagem_fk1]
 GO
 ALTER TABLE [dbo].[Vilao]  WITH CHECK ADD  CONSTRAINT [Vilao_fk0] FOREIGN KEY([idEspecie])
 REFERENCES [dbo].[Especie] ([idEspecie])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Vilao] CHECK CONSTRAINT [Vilao_fk0]
 GO
 ALTER TABLE [dbo].[Vilao_Capitulo]  WITH CHECK ADD  CONSTRAINT [Vilao_Capitulo_fk0] FOREIGN KEY([idVilao])
 REFERENCES [dbo].[Vilao] ([idVilao])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Vilao_Capitulo] CHECK CONSTRAINT [Vilao_Capitulo_fk0]
 GO
 ALTER TABLE [dbo].[Vilao_Capitulo]  WITH CHECK ADD  CONSTRAINT [Vilao_Capitulo_fk1] FOREIGN KEY([idCapitulo])
 REFERENCES [dbo].[Capitulo] ([idCapitulo])
-ON UPDATE CASCADE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
 GO
 ALTER TABLE [dbo].[Vilao_Capitulo] CHECK CONSTRAINT [Vilao_Capitulo_fk1]
 GO
