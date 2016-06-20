@@ -79,6 +79,7 @@
     <Compile Include="DAO\EspecieDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\ItemDAO.cs" />
+    <Compile Include="DAO\PersonagemDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\ViloesDAO.cs" />
     <Compile Include="Entidades\Atributos.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Entidades\Especie.cs" />
     <Compile Include="Entidades\IEntidades.cs" />
     <Compile Include="Entidades\Item.cs" />
+    <Compile Include="Entidades\Personagem.cs" />
     <Compile Include="Entidades\Viloes.cs" />
     <Compile Include="Formularios\FactoryTelas.cs" />
     <Compile Include="Formularios\frmAdministrador.cs">
@@ -143,6 +145,12 @@
     </Compile>
     <Compile Include="Formularios\ucIncluirItem.Designer.cs">
       <DependentUpon>ucIncluirItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirPersonagem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucIncluirPersonagem.Designer.cs">
+      <DependentUpon>ucIncluirPersonagem.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ucIncluirViloes.cs">
       <SubType>UserControl</SubType>
@@ -237,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirItem.resx">
       <DependentUpon>ucIncluirItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucIncluirPersonagem.resx">
+      <DependentUpon>ucIncluirPersonagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirViloes.resx">
       <DependentUpon>ucIncluirViloes.cs</DependentUpon>
