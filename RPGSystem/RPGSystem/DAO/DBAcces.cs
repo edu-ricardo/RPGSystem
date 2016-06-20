@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 namespace RPGSystem.DAO {    
     public class DBAcces {
         string StrCon = ConfigurationManager.ConnectionStrings["RPGSystem"].ConnectionString;
-        
-        public int ExecQueryReturning(string Query, List<string> ParamsName, List<object> Parameters) {
-            SqlConnection Conexao = new SqlConnection();
+        SqlConnection Conexao;
+        public DBAcces() {
+            SqlConnection.ClearAllPools();
+            Conexao = new SqlConnection();
             Conexao.ConnectionString = StrCon;
-            Conexao.Open();
+        } 
+
+        public int ExecQueryReturning(string Query, List<string> ParamsName, List<object> Parameters) {
+            Conexao.Close();
+            if (Conexao.State != System.Data.ConnectionState.Open)
+                Conexao.Open();
 
             SqlCommand Command = new SqlCommand();
             Command.Connection = Conexao;
@@ -28,10 +34,10 @@ namespace RPGSystem.DAO {
         }
 
         public SqlCommand ExecQuery(string Query) {
-            SqlConnection Conexao = new SqlConnection();
-            Conexao.ConnectionString = StrCon;
-            Conexao.Open();
-            
+            Conexao.Close();
+            if (Conexao.State != System.Data.ConnectionState.Open)
+                Conexao.Open();
+
 
             SqlCommand Command = new SqlCommand();
             Command.Connection = Conexao;
@@ -45,9 +51,9 @@ namespace RPGSystem.DAO {
             Executa uma query com parametros
         */
         public SqlCommand ExecQuery(string Query, List<string> ParamsName, List<object> Parameters) {
-            SqlConnection Conexao = new SqlConnection();
-            Conexao.ConnectionString = StrCon;
-            Conexao.Open();
+            Conexao.Close();
+            if (Conexao.State != System.Data.ConnectionState.Open)
+                Conexao.Open();
 
             SqlCommand Command = new SqlCommand();
             Command.Connection = Conexao;
@@ -62,9 +68,9 @@ namespace RPGSystem.DAO {
         }
 
         public SqlDataReader Query(string Query) {
-            SqlConnection Conexao = new SqlConnection();
-            Conexao.ConnectionString = StrCon;
-            Conexao.Open();
+            Conexao.Close();
+            if (Conexao.State != System.Data.ConnectionState.Open)
+                Conexao.Open();
 
             SqlCommand Command = new SqlCommand();
             Command.Connection = Conexao;
@@ -77,9 +83,9 @@ namespace RPGSystem.DAO {
             Executa uma query com parametros
         */
         public SqlDataReader Query(string Query, List<string> ParamsName, List<object> Parameters) {
-            SqlConnection Conexao = new SqlConnection();
-            Conexao.ConnectionString = StrCon;
-            Conexao.Open();
+            Conexao.Close();
+            if (Conexao.State != System.Data.ConnectionState.Open)
+                Conexao.Open();
 
             SqlCommand Command = new SqlCommand();
             Command.Connection = Conexao;

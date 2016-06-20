@@ -114,6 +114,12 @@
     </Compile>
     <Compile Include="Entidades\ITela.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Formularios\ucHistoria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucHistoria.Designer.cs">
+      <DependentUpon>ucHistoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ucIncluirAtributo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,6 +192,12 @@
     <Compile Include="Formularios\ucListarViloes.Designer.cs">
       <DependentUpon>ucListarViloes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ucMiniCapitulo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ucMiniCapitulo.Designer.cs">
+      <DependentUpon>ucMiniCapitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMestre.resx">
       <DependentUpon>frmMestre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucHistoria.resx">
+      <DependentUpon>ucHistoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucIncluirAtributo.resx">
       <DependentUpon>ucIncluirAtributo.cs</DependentUpon>
@@ -246,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ucListarViloes.resx">
       <DependentUpon>ucListarViloes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ucMiniCapitulo.resx">
+      <DependentUpon>ucMiniCapitulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadUser.resx">
       <DependentUpon>frmCadUser.cs</DependentUpon>

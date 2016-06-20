@@ -199,12 +199,12 @@ namespace RPGSystem.DAO {
                 cap.Texto = Convert.ToString(Reader["Texto"]);
                 cap.Titulo = Convert.ToString(Reader["titulo"]);
                 cap.startChapter = Convert.ToBoolean(Reader["startChapter"]);
-                SqlDataReader itemsR = db.Query("SELECT * FROM Item_Capitulo WHERE idCapitulo = " + Convert.ToString(cap.idCapitulo));
+                SqlDataReader itemsR = (new DBAcces()).Query("SELECT * FROM Item_Capitulo WHERE idCapitulo = " + Convert.ToString(cap.idCapitulo));
                 while (itemsR.Read()) {
                     cap.Items.Add(Item.ListarTodos().Find(x => x.IdItem == Convert.ToInt32(itemsR["idItem"])));
                 }
 
-                SqlDataReader viloesR = db.Query("SELECT * FROM Vilao_Capitulo WHERE idCapitulo = " + Convert.ToString(cap.idCapitulo));
+                SqlDataReader viloesR = (new DBAcces()).Query("SELECT * FROM Vilao_Capitulo WHERE idCapitulo = " + Convert.ToString(cap.idCapitulo));
                 while (viloesR.Read()) {
                     cap.Viloes.Add(Viloes.ListarTodos().Find(x => x.IdVilao == Convert.ToInt32(viloesR["idVilao"])));
                 }

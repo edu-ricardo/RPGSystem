@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RPGSystem.Entidades{
-    class Viloes : IEntidades    {
+    public class Viloes : IEntidades    {
                 
         public int IdVilao { get; set; }
         public int idEspecie { get; set; }

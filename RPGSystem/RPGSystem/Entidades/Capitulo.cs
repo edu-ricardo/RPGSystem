@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RPGSystem.Entidades {
-    class Capitulo : IEntidades {
+    public class Capitulo : IEntidades {
         public int idCapitulo { get; set; }
         public string Titulo { get; set; }
         public string Texto { get; set; }

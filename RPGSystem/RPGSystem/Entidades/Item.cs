@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RPGSystem.DAO;
 
 namespace RPGSystem.Entidades {
-    class Item : IEntidades {
+    public class Item : IEntidades {
         public int IdItem { get; set; }
 
         public int idEspecie { get; set; }

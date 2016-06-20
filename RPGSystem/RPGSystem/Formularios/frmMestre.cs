@@ -195,5 +195,20 @@ namespace RPGSystem.Formularios {
             tcMestre.TabPages.Add(tpListarCap);
             tcMestre.SelectedIndex = tcMestre.TabCount - 1;
         }
+
+        private void históriaToolStripMenuItem1_Click(object sender, EventArgs e) {
+            TabPage tpHistoria = new TabPage("Historia");
+            ucHistoria TelaHistoria = new ucHistoria();
+            TelaHistoria.Parent = this;
+            TelaHistoria.Dock = DockStyle.Fill;
+            tpHistoria.Controls.Add(TelaHistoria);
+            if (this.WindowState == FormWindowState.Normal) {
+                tpHistoria.AutoScroll = true;
+                tpHistoria.AutoScrollMargin = new System.Drawing.Size(20, 20);
+                tpHistoria.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);
+            }
+            tcMestre.TabPages.Add(tpHistoria);
+            tcMestre.SelectedIndex = tcMestre.TabCount - 1;
+        }
     }
 }
