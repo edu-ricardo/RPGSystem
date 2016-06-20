@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inventárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.carregarÚltimoSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarESairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tcJogo = new System.Windows.Forms.TabControl();
+            this.inventárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comoJogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tcJogo = new System.Windows.Forms.TabControl();
+            this.personagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,15 +55,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // inventárioToolStripMenuItem
-            // 
-            this.inventárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventárioToolStripMenuItem1,
-            this.statusToolStripMenuItem1});
-            this.inventárioToolStripMenuItem.Name = "inventárioToolStripMenuItem";
-            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.inventárioToolStripMenuItem.Text = "Jogador";
-            // 
             // statusToolStripMenuItem
             // 
             this.statusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -72,18 +64,6 @@
             this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
             this.statusToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.statusToolStripMenuItem.Text = "Opções";
-            // 
-            // inventárioToolStripMenuItem1
-            // 
-            this.inventárioToolStripMenuItem1.Name = "inventárioToolStripMenuItem1";
-            this.inventárioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.inventárioToolStripMenuItem1.Text = "Inventário";
-            // 
-            // statusToolStripMenuItem1
-            // 
-            this.statusToolStripMenuItem1.Name = "statusToolStripMenuItem1";
-            this.statusToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.statusToolStripMenuItem1.Text = "Status";
             // 
             // salvarToolStripMenuItem1
             // 
@@ -103,14 +83,27 @@
             this.salvarESairToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.salvarESairToolStripMenuItem.Text = "Salvar e sair";
             // 
-            // tcJogo
+            // inventárioToolStripMenuItem
             // 
-            this.tcJogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcJogo.Location = new System.Drawing.Point(0, 24);
-            this.tcJogo.Name = "tcJogo";
-            this.tcJogo.SelectedIndex = 0;
-            this.tcJogo.Size = new System.Drawing.Size(919, 492);
-            this.tcJogo.TabIndex = 2;
+            this.inventárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inventárioToolStripMenuItem1,
+            this.statusToolStripMenuItem1,
+            this.personagemToolStripMenuItem});
+            this.inventárioToolStripMenuItem.Name = "inventárioToolStripMenuItem";
+            this.inventárioToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.inventárioToolStripMenuItem.Text = "Jogador";
+            // 
+            // inventárioToolStripMenuItem1
+            // 
+            this.inventárioToolStripMenuItem1.Name = "inventárioToolStripMenuItem1";
+            this.inventárioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventárioToolStripMenuItem1.Text = "Inventário";
+            // 
+            // statusToolStripMenuItem1
+            // 
+            this.statusToolStripMenuItem1.Name = "statusToolStripMenuItem1";
+            this.statusToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.statusToolStripMenuItem1.Text = "Status";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -123,8 +116,23 @@
             // comoJogarToolStripMenuItem
             // 
             this.comoJogarToolStripMenuItem.Name = "comoJogarToolStripMenuItem";
-            this.comoJogarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.comoJogarToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.comoJogarToolStripMenuItem.Text = "Como jogar";
+            // 
+            // tcJogo
+            // 
+            this.tcJogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcJogo.Location = new System.Drawing.Point(0, 24);
+            this.tcJogo.Name = "tcJogo";
+            this.tcJogo.SelectedIndex = 0;
+            this.tcJogo.Size = new System.Drawing.Size(919, 492);
+            this.tcJogo.TabIndex = 2;
+            // 
+            // personagemToolStripMenuItem
+            // 
+            this.personagemToolStripMenuItem.Name = "personagemToolStripMenuItem";
+            this.personagemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.personagemToolStripMenuItem.Text = "Personagem";
             // 
             // frmJogo
             // 
@@ -156,5 +164,6 @@
         public System.Windows.Forms.TabControl tcJogo;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comoJogarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personagemToolStripMenuItem;
     }
 }

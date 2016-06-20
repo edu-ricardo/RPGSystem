@@ -104,7 +104,7 @@ namespace RPGSystem.DAO
 
             while (Reader.Read())
             {
-                Personagem PersAux = new Personagem(Convert.ToInt32(Reader["IdPersonagem"])   , Convert.ToString(Reader["Especie"])   , Convert.ToString(Reader["Nome"])   ,   Convert.ToBoolean(Reader["Genero"])   , Convert.ToInt32(Reader["Ataque"]), Convert.ToInt32(Reader["Defesa"]), Convert.ToInt32(Reader["Nivel"])));
+                Personagem PersAux = new Personagem(Convert.ToInt32(Reader["IdPersonagem"])   , Convert.ToString(Reader["Especie"])   , Convert.ToString(Reader["Nome"])   ,   Convert.ToBoolean(Reader["Genero"])   , Convert.ToInt32(Reader["Ataque"]), Convert.ToInt32(Reader["Defesa"]), Convert.ToInt32(Reader["Nivel"]) );
                 PersAux.IdPersonagem = Convert.ToInt32(Reader["IdPersonagem"]);
                 PersAux.DiscoverEspecie();
                 PersLst.Add(PersAux);

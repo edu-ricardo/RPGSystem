@@ -39,12 +39,13 @@ namespace RPGSystem.Formularios
 
             pers.Especie = Convert.ToString(cbxEspecie.SelectedValue);
             pers.Nome = tbNome.Text;
-            pers.Genero = Convert.ToString(cbxGenero.SelectedValue);
+            //pers.Genero = 
+            
 
 
             try
             {
-                evil.Salvar();
+                pers.Salvar();
                 if (MessageBox.Show("Incluido com Sucesso!! \r Deseja incluir um novo?", "Sucesso", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     ReloadForm();

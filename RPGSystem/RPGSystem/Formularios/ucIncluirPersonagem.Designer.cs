@@ -34,9 +34,7 @@
             this.cbxEspecie = new System.Windows.Forms.ComboBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblClasse = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbIdade = new System.Windows.Forms.TextBox();
             this.cbxGenero = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -63,7 +61,7 @@
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(103, 124);
+            this.tbNome.Location = new System.Drawing.Point(61, 182);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(365, 22);
             this.tbNome.TabIndex = 12;
@@ -71,7 +69,7 @@
             // cbxEspecie
             // 
             this.cbxEspecie.FormattingEnabled = true;
-            this.cbxEspecie.Location = new System.Drawing.Point(103, 73);
+            this.cbxEspecie.Location = new System.Drawing.Point(61, 98);
             this.cbxEspecie.Name = "cbxEspecie";
             this.cbxEspecie.Size = new System.Drawing.Size(365, 22);
             this.cbxEspecie.TabIndex = 11;
@@ -79,7 +77,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(35, 127);
+            this.lblNome.Location = new System.Drawing.Point(58, 145);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(39, 14);
             this.lblNome.TabIndex = 9;
@@ -88,41 +86,26 @@
             // lblClasse
             // 
             this.lblClasse.AutoSize = true;
-            this.lblClasse.Location = new System.Drawing.Point(35, 79);
+            this.lblClasse.Location = new System.Drawing.Point(58, 70);
             this.lblClasse.Name = "lblClasse";
             this.lblClasse.Size = new System.Drawing.Size(39, 14);
             this.lblClasse.TabIndex = 8;
             this.lblClasse.Text = "Classe";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 178);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 14);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Idade";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 229);
+            this.label3.Location = new System.Drawing.Point(58, 227);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 14);
             this.label3.TabIndex = 9;
             this.label3.Text = "Gênero";
             // 
-            // tbIdade
-            // 
-            this.tbIdade.Location = new System.Drawing.Point(103, 175);
-            this.tbIdade.Name = "tbIdade";
-            this.tbIdade.Size = new System.Drawing.Size(187, 22);
-            this.tbIdade.TabIndex = 12;
-            // 
             // cbxGenero
             // 
+            this.cbxGenero.DisplayMember = "Feminino";
             this.cbxGenero.FormattingEnabled = true;
-            this.cbxGenero.Location = new System.Drawing.Point(103, 229);
+            this.cbxGenero.Location = new System.Drawing.Point(61, 260);
             this.cbxGenero.Name = "cbxGenero";
             this.cbxGenero.Size = new System.Drawing.Size(187, 22);
             this.cbxGenero.TabIndex = 16;
@@ -135,10 +118,8 @@
             this.Controls.Add(this.cbxGenero);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIncluir);
-            this.Controls.Add(this.tbIdade);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbNome);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxEspecie);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblClasse);
@@ -158,9 +139,7 @@
         private System.Windows.Forms.ComboBox cbxEspecie;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblClasse;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbIdade;
         private System.Windows.Forms.ComboBox cbxGenero;
     }
 }
